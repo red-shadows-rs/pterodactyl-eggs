@@ -1,13 +1,13 @@
 <!-- © Copyright RED SHADOWS | RS - Shadow-x78 -->
 
-# Node.js Pterodactyl Egg 🥚
+# Node.js | Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
 ![JSON](https://img.shields.io/badge/JSON-egg-blue?style=for-the-badge&logo=json&logoColor=white)
 
 ## ✨ Features
 
-- 📦 **Ready-to-use**: Pre-configured for Node.js & TypeScript
+- 📦 **Ready-to-use**: Pre-configured for Node.js
 - 🛠️ **Easy import**: One-click import into Pterodactyl panel
 - 🔒 **Secure**: Minimal, safe startup commands
 - 🧩 **Customizable**: Edit variables and startup as needed
@@ -22,45 +22,20 @@
 ## 🚀 Startup Command
 
 ```bash
-# For .js files
 node /home/container/{{STARTUP_FILE}}
-
-# For .ts files (auto-compiles then runs)
-npx tsc {{STARTUP_FILE}} && node /home/container/$(basename {{STARTUP_FILE}} .ts).js
 ```
 
-- Automatically runs `npm install` before starting.
-- Shows an error if the startup file is missing.
-- Supports both JavaScript and TypeScript entry files.
-
-## 🐳 Docker Images
-
-- `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v22`
-- `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v20`
-- `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v18`
+- Installs `puppeteer` and any packages in `NODE_PACKAGES` before start.
+- Shows an error if the entry file is missing.
+- JavaScript only.
 
 ## ⚙️ Environment Variables
 
-| Variable       | Description                        | Default     | Required |
-|----------------|------------------------------------|-------------|----------|
-| `STARTUP_FILE` | Main file to run (e.g. index.js)   | index.js    | ✅       |
-| `TZ`           | Timezone                           | UTC         | ❌       |
-
-## 📝 Example Usage
-
-- Import `egg-node-js.json` in your Pterodactyl panel.
-- Set `STARTUP_FILE` to your entry file (e.g. `index.js` or `main.ts`).
-- Start your server!
-
-## 🛠️ Installation Script
-
-Installs Node.js, npm, TypeScript, and build tools:
-
-```bash
-apt update
-apt install -y curl jq file unzip git nodejs npm
-npm install -g typescript
-```
+| Variable       | Description                                 | Default     | Required |
+|----------------|---------------------------------------------|-------------|----------|
+| `STARTUP_FILE` | Main file to run (e.g. index.js)            | index.js    | ✅       |
+| `NODE_PACKAGES`| Space-separated npm packages to install      | (empty)     | ❌       |
+| `TZ`           | Timezone                                    | UTC         | ❌       |
 
 ## 🤝 Contributing
 
@@ -75,4 +50,5 @@ MIT — see [LICENSE](../../../LICENSE)
 
 ---
 
-**© 2025 RED SHADOWS | RS — Shadow-x78. All rights reserved.**
+<span style="font-weight:bold;vertical-align:middle;">&#169; 2025 Copyright</span>
+<img src="https://img.shields.io/badge/RED%20SHADOWS%20%7C%20RS-DC143C?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="RED SHADOWS | RS" style="vertical-align:middle;"/> &#124; <img src="https://img.shields.io/badge/Shadow--x78-000000?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="Shadow-x78" style="vertical-align:middle;"/> - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>

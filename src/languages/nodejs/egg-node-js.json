@@ -15,7 +15,7 @@
     "Node.js 18": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v18"
   },
   "file_denylist": [],
-  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; npm install; if [[ {{STARTUP_FILE}} == *.ts ]]; then npx tsc {{STARTUP_FILE}} && node /home/container/$(basename {{STARTUP_FILE}} .ts).js; else node /home/container/{{STARTUP_FILE}}; fi",
+  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; npm install; node /home/container/{{STARTUP_FILE}};",
   "config": {
     "files": "{}",
     "startup": "{\n    \"done\": \"/home/container/{{STARTUP_FILE}}\"\n}",
@@ -24,15 +24,15 @@
   },
   "scripts": {
     "installation": {
-      "script": "#!/bin/bash\n# Node.js/TypeScript App Installation Script\n#\n# Server Files: /mnt/server\napt update\napt install -y curl jq file unzip git nodejs npm\nnpm install -g typescript\nmkdir -p /mnt/server\ncd /mnt/server\nnpx install puppeteer\necho -e 'Install complete'\nexit 0",
-      "container": "node:22-alpine",
+      "script": "#!/bin/bash\r\n# NodeJS App Installation Script\r\n#\r\n# Server Files: /mnt/server\r\nexport DEBIAN_FRONTEND=noninteractive\r\napt update\r\napt install -y curl unzip\r\n\r\necho -e \"Updating NPM. Please Wait...\"\r\nnpm install npm@latest -g\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing Nodejs Packages\"\r\nif [[ -z ${NODE_PACKAGES} ]]; then\r\n    npm install\r\nelse\r\n    npm install ${NODE_PACKAGES}\r\nfi\r\n\r\nif [ -f /mnt/server/package.json ]; then\r\n    npm install --omit=dev\r\nfi\r\n\r\necho -e \"Install Complete\"\r\nexit 0",
+      "container": "node:22-bullseye-slim",
       "entrypoint": "bash"
     }
   },
   "variables": [
     {
       "name": "Startup File",
-      "description": "The main file to run (e.g. index.js or main.ts)",
+      "description": "The main file to run (e.g. index.js)",
       "env_variable": "STARTUP_FILE",
       "default_value": "index.js",
       "user_viewable": true,
@@ -45,6 +45,16 @@
       "description": "Set the timezone for the container.",
       "env_variable": "TZ",
       "default_value": "UTC",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string",
+      "field_type": "text"
+    },
+    {
+      "name": "Node Packages",
+      "description": "Space-separated npm packages to install (e.g. express dotenv). Leave empty if not needed.",
+      "env_variable": "NODE_PACKAGES",
+      "default_value": "",
       "user_viewable": true,
       "user_editable": true,
       "rules": "nullable|string",
