@@ -4,55 +4,68 @@
     "version": "PTDL_v2",
     "update_url": null
   },
-  "exported_at": "2024-11-29T15:20:00+00:00",
+  "exported_at": "2025-06-23T15:00:00+00:00",
   "name": "Java",
-  "author": "shadow.xox78@gmail.com",
-  "description": "Java Egg",
-  "features": null,
+  "author": "RED SHADOWS | RS",
+  "description": "Java Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Java applications. Compatible with multiple Java versions.\n\nTeam: RED SHADOWS | RS\nAuthor: Shadow-x78\nEmail: support@red-shadows-rs.com",
+  "features": [
+    "Ready-to-use",
+    "Easy import",
+    "Secure startup",
+    "Customizable",
+    "Well-documented"
+  ],
   "docker_images": {
-    "Java 22": "shadowx7/java_v22",
-    "Java 20": "shadowx7/java_v20",
-    "Java 18": "shadowx7/java_v18",
-    "Java 17": "shadowx7/java_v17",
-    "Java 11": "shadowx7/java_v11",
-    "Java 8": "shadowx7/java_v8"
+    "Java 21": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v21",
+    "Java 17": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v17",
+    "Java 11": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v11",
+    "Java 8": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v8"
   },
   "file_denylist": [],
-  "startup": "if [[ ! -z {{STARTUP_SCRIPT}} ]]; then mvn clean install; fi; if [[ -f /home/container/{{STARTUP_SCRIPT}} && ({{STARTUP_SCRIPT}} == *.jar) ]]; then java -jar /home/container/{{STARTUP_SCRIPT}}; else echo 'Invalid file type or file not found'; fi;",
+  "startup": "if [ ! -f /home/container/{{STARTUP}} ]; then echo 'Error: {{STARTUP}} not found!'; exit 1; fi; if [ -f /home/container/pom.xml ]; then mvn clean install; fi; java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP}}",
   "config": {
     "files": "{}",
-    "startup": "{\r\n    \"done\": \"change this part\"\r\n}",
+    "startup": "{\n    \"done\": \"Change this\"\n}",
     "logs": "{}",
     "stop": "^^C"
   },
   "scripts": {
     "installation": {
-      "script": "#!/bin/bash\r\n# Java App Installation Script\r\n#\r\n# Server Files: /mnt/server\r\napt update\r\napt install -y curl jq file unzip maven openjdk-11-jdk\r\n\r\necho -e \"updating maven. please wait...\"\r\nmvn clean install\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing java dependencies\"\r\nif [[ ! -z ${JAVA_DEPENDENCIES} ]]; then\r\n    mvn install ${JAVA_DEPENDENCIES}\r\nfi\r\n\r\nif [ -f /mnt/server/pom.xml ]; then\r\n    mvn install --production\r\nfi\r\n\r\necho -e \"install complete\"\r\nexit 0",
+      "script": "#!/bin/bash\n# Java App Installation Script\n#\n# Server Files: /mnt/server\napt update\napt install -y curl jq file unzip git maven openjdk-8-jdk openjdk-11-jdk openjdk-17-jdk openjdk-21-jdk\nmkdir -p /mnt/server\ncd /mnt/server\necho -e 'Install complete'\nexit 0",
       "container": "openjdk:17-jdk",
       "entrypoint": "bash"
     }
   },
   "variables": [
     {
-      "name": "Startup Script",
-      "description": "The path to the startup script (.jar file)",
-      "env_variable": "STARTUP_SCRIPT",
-      "default_value": "main.jar",
+      "name": "Startup Command",
+      "description": "The name of the main JAR file to run (e.g. server.jar)",
+      "env_variable": "STARTUP",
+      "default_value": "server.jar",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string",
       "field_type": "text"
     },
     {
-      "name": "Additional Java dependencies",
-      "description": "Install additional Java dependencies.\r\n\r\nUse spaces to separate.",
-      "env_variable": "JAVA_DEPENDENCIES",
-      "default_value": "",
+      "name": "Timezone",
+      "description": "Set the timezone for the container.",
+      "env_variable": "TZ",
+      "default_value": "UTC",
       "user_viewable": true,
       "user_editable": true,
       "rules": "nullable|string",
       "field_type": "text"
+    },
+    {
+      "name": "Maximum Memory",
+      "description": "Maximum RAM for the Java process (e.g. 2048M)",
+      "env_variable": "SERVER_MEMORY",
+      "default_value": "2048M",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|integer|min:512|max:65536",
+      "field_type": "text"
     }
   ]
 }
-

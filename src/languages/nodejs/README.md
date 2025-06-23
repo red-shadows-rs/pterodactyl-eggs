@@ -1,35 +1,78 @@
-<img align="left" width="70" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Resume application project app icon">
+<!-- © Copyright RED SHADOWS | RS - Shadow-x78 -->
 
-# Node.js
+# Node.js Pterodactyl Egg 🥚
 
-This egg is designed to run any JavaScript application, providing a robust and scalable environment for your projects.
+![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-egg-blue?style=for-the-badge&logo=json&logoColor=white)
 
-## 🚀 Versions
+## ✨ Features
 
-| Version | Description                | Status |
-| :------ | :------------------------- | :----- |
-| `v12`   | Does not support Puppeteer | ✔️     |
-| `v14`   | Does not support Puppeteer | ✔️     |
-| `v16`   | Does not support Puppeteer | ✔️     |
-| `v18`   | Fully supports Puppeteer   | ✔️     |
-| `v20`   | Fully supports Puppeteer   | ✔️     |
-| `v22`   | Fully supports Puppeteer   | ✔️     |
+- 📦 **Ready-to-use**: Pre-configured for Node.js & TypeScript
+- 🛠️ **Easy import**: One-click import into Pterodactyl panel
+- 🔒 **Secure**: Minimal, safe startup commands
+- 🧩 **Customizable**: Edit variables and startup as needed
+- 📝 **Well-documented**: Clear instructions and variables
 
-## 🔨 Configuration
+## 🐣 Supported Versions
 
-The server will remain in the "Starting" state until the egg's `Start Configuration` is modified.  
-You need to update the configuration to match the output printed by your application so that the Pterodactyl panel detects it as running.
+- **Node.js 18**
+- **Node.js 20**
+- **Node.js 22**
 
-For example, set it to:  
-`Application is online`  
-or  
-`Server started successfully`.
+## 🚀 Startup Command
 
-Make sure the configuration reflects the exact output of your application.
+```bash
+# For .js files
+node /home/container/{{STARTUP}}
 
-![image](https://user-images.githubusercontent.com/10975908/126516861-c5cb4630-9f25-405c-8199-97bf5ec15a7f.png)
+# For .ts files (auto-compiles then runs)
+npx tsc {{STARTUP}} && node /home/container/$(basename {{STARTUP}} .ts).js
+```
 
-## 📞 Support
+- Automatically runs `npm install` before starting.
+- Shows an error if the startup file is missing.
+- Supports both JavaScript and TypeScript entry files.
 
-For support, contact:  
-✉️ Email: [shadow.xox78@gmail.com](mailto:shadow.xox78@gmail.com)
+## 🐳 Docker Images
+
+- `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v22`
+- `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v20`
+- `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v18`
+
+## ⚙️ Environment Variables
+
+| Variable   | Description                        | Default     | Required |
+|------------|------------------------------------|-------------|----------|
+| `STARTUP`  | Main file to run (e.g. index.js)   | index.js    | ✅       |
+| `TZ`       | Timezone                           | UTC         | ❌       |
+
+## 📝 Example Usage
+
+- Import `egg-node-js.json` in your Pterodactyl panel.
+- Set `STARTUP` to your entry file (e.g. `index.js` or `main.ts`).
+- Start your server!
+
+## 🛠️ Installation Script
+
+Installs Node.js, npm, TypeScript, and build tools:
+
+```bash
+apt update
+apt install -y curl jq file unzip git nodejs npm
+npm install -g typescript
+```
+
+## 🤝 Contributing
+
+1. Fork & branch
+2. Add or improve eggs
+3. Test on your panel
+4. Pull request
+
+## 📜 License
+
+MIT — see [LICENSE](../../../LICENSE)
+
+---
+
+**© 2025 RED SHADOWS | RS — Shadow-x78. All rights reserved.**
