@@ -4,6 +4,10 @@
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
 ![JSON](https://img.shields.io/badge/JSON-eggs-blue?style=for-the-badge&logo=json&logoColor=white)
+<<<<<<< HEAD
+=======
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+>>>>>>> 3055eabd266858b909923daccd06d2837f0251ab
 
 ## ✨ Features
 
@@ -75,4 +79,8 @@ MIT — see [LICENSE](../LICENSE)
 ---
 
 <span style="font-weight:bold;vertical-align:middle;">&#169; 2025 Copyright</span>
+<<<<<<< HEAD
 <img src="https://img.shields.io/badge/RED%20SHADOWS%20%7C%20RS-DC143C?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="RED SHADOWS | RS" style="vertical-align:middle;"/> &#124; <img src="https://img.shields.io/badge/Shadow--x78-000000?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="Shadow-x78" style="vertical-align:middle;"/> - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>
+=======
+<img src="https://img.shields.io/badge/RED%20SHADOWS%20%7C%20RS-DC143C?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="RED SHADOWS | RS" style="vertical-align:middle;"/> &#124; <img src="https://img.shields.io/badge/Shadow--x78-000000?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="Shadow-x78" style="vertical-align:middle;"/> - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>
+>>>>>>> 3055eabd266858b909923daccd06d2837f0251ab
