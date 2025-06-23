@@ -4,27 +4,21 @@
     "version": "PTDL_v2",
     "update_url": null
   },
-  "exported_at": "2025-06-23T15:00:00+00:00",
+  "exported_at": "2025-06-23T19:26:16+02:00",
   "name": "Node.js",
-  "author": "RED SHADOWS | RS",
-  "description": "Node.js Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Node.js applications.\n\nTeam: RED SHADOWS | RS\nAuthor: Shadow-x78\nEmail: support@red-shadows-rs.com",
-  "features": [
-    "Ready-to-use",
-    "Easy import",
-    "Secure startup",
-    "Customizable",
-    "Well-documented"
-  ],
+  "author": "shadow.xox78@gmail.com",
+  "description": "Node.js Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Node.js applications.\r\n\r\nTeam: RED SHADOWS | RS\r\nAuthor: Shadow-x78\r\nEmail: support@red-shadows-rs.com",
+  "features": null,
   "docker_images": {
     "Node.js 22": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v22",
     "Node.js 20": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v20",
     "Node.js 18": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v18"
   },
   "file_denylist": [],
-  "startup": "if [ ! -f /home/container/{{STARTUP}} ]; then echo 'Error: {{STARTUP}} not found!'; exit 1; fi; npm install; if [[ {{STARTUP}} == *.ts ]]; then npx tsc {{STARTUP}} && node /home/container/$(basename {{STARTUP}} .ts).js; else node /home/container/{{STARTUP}}; fi",
+  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; npm install; if [[ {{STARTUP_FILE}} == *.ts ]]; then npx tsc {{STARTUP_FILE}} && node /home/container/$(basename {{STARTUP_FILE}} .ts).js; else node /home/container/{{STARTUP_FILE}}; fi",
   "config": {
     "files": "{}",
-    "startup": "{\n    \"done\": \"Change this\"\n}",
+    "startup": "{\n    \"done\": \"/home/container/{{STARTUP_FILE}}\"\n}",
     "logs": "{}",
     "stop": "^^C"
   },
@@ -39,7 +33,7 @@
     {
       "name": "Startup File",
       "description": "The main file to run (e.g. index.js or main.ts)",
-      "env_variable": "STARTUP",
+      "env_variable": "STARTUP_FILE",
       "default_value": "index.js",
       "user_viewable": true,
       "user_editable": true,

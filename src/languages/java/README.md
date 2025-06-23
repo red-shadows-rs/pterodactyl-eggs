@@ -23,7 +23,7 @@
 ## 🚀 Startup Command
 
 ```bash
-java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP}}
+java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}
 ```
 
 - Automatically runs `mvn clean install` if a `pom.xml` is found before starting the JAR.
@@ -40,14 +40,14 @@ java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP}}
 
 | Variable         | Description                        | Default      | Required |
 |------------------|------------------------------------|--------------|----------|
-| `STARTUP`        | Main JAR file name (e.g. server.jar)| server.jar   | ✅       |
+| `STARTUP_FILE`   | Main JAR file name (e.g. server.jar)| server.jar   | ✅       |
 | `SERVER_MEMORY`  | Maximum RAM for Java (e.g. 2048M)   | 2048M        | ✅       |
 | `TZ`             | Timezone                            | UTC          | ❌       |
 
 ## 📝 Example Usage
 
 - Import `egg-java.json` in your Pterodactyl panel.
-- Set `STARTUP` to your JAR file name (e.g. `server.jar`).
+- Set `STARTUP_FILE` to your JAR file name (e.g. `server.jar`).
 - Set `SERVER_MEMORY` as needed (e.g. `2048M`).
 - Start your server!
 

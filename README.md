@@ -19,19 +19,19 @@
 
 - **Egg:** [`egg-java.json`](src/languages/java/egg-java.json)
 - **Versions:** 8, 11, 17, 21
-- **Startup:** `java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP}}`
+- **Startup:** `java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}`
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="20" height="20"/> Node.js
 
 - **Egg:** [`egg-node-js.json`](src/languages/nodejs/egg-node-js.json)
 - **Versions:** 18, 20, 22
-- **Startup:** `node /home/container/{{STARTUP}}` (or auto-compiles and runs `.ts`)
+- **Startup:** `node /home/container/{{STARTUP_FILE}}` (or auto-compiles and runs `.ts`)
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="20" height="20"/> Python
 
 - **Egg:** [`egg-python.json`](src/languages/python/egg-python.json)
 - **Versions:** 3.9, 3.10, 3.11, 3.12
-- **Startup:** `python3 /home/container/{{STARTUP}}`
+- **Startup:** `python3 /home/container/{{STARTUP_FILE}}`
 
 ## 📥 Importing Eggs
 
@@ -47,19 +47,19 @@
 
 | Variable      | Description                        | Default      | Required |
 |---------------|------------------------------------|--------------|----------|
-| `STARTUP`     | Main file to run (jar/js/py)       | Varies       | ✅       |
+| `STARTUP_FILE`| Main file to run (jar/js/py)       | Varies       | ✅       |
 | `SERVER_MEMORY`| Max RAM for Java (e.g. 2048M)     | 2048M        | ✅ (Java) |
 | `TZ`          | Timezone                           | UTC          | ❌       |
 
 ## 📝 Example Usage
 
 - **Java:**
-  - Import `egg-java.json` and set `STARTUP` to your jar file name (e.g. `server.jar`).
+  - Import `egg-java.json` and set `STARTUP_FILE` to your jar file name (e.g. `server.jar`).
   - Set `SERVER_MEMORY` as needed (e.g. `2048M`).
 - **Node.js:**
-  - Import `egg-node-js.json` and set `STARTUP` to your entry file (e.g. `index.js` or `main.ts`).
+  - Import `egg-node-js.json` and set `STARTUP_FILE` to your entry file (e.g. `index.js` or `main.ts`).
 - **Python:**
-  - Import `egg-python.json` and set `STARTUP` to your main Python file (e.g. `main.py`).
+  - Import `egg-python.json` and set `STARTUP_FILE` to your main Python file (e.g. `main.py`).
 
 ## 🤝 Contributing
 

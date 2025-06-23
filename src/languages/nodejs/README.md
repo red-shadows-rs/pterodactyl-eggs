@@ -23,10 +23,10 @@
 
 ```bash
 # For .js files
-node /home/container/{{STARTUP}}
+node /home/container/{{STARTUP_FILE}}
 
 # For .ts files (auto-compiles then runs)
-npx tsc {{STARTUP}} && node /home/container/$(basename {{STARTUP}} .ts).js
+npx tsc {{STARTUP_FILE}} && node /home/container/$(basename {{STARTUP_FILE}} .ts).js
 ```
 
 - Automatically runs `npm install` before starting.
@@ -41,15 +41,15 @@ npx tsc {{STARTUP}} && node /home/container/$(basename {{STARTUP}} .ts).js
 
 ## ⚙️ Environment Variables
 
-| Variable   | Description                        | Default     | Required |
-|------------|------------------------------------|-------------|----------|
-| `STARTUP`  | Main file to run (e.g. index.js)   | index.js    | ✅       |
-| `TZ`       | Timezone                           | UTC         | ❌       |
+| Variable       | Description                        | Default     | Required |
+|----------------|------------------------------------|-------------|----------|
+| `STARTUP_FILE` | Main file to run (e.g. index.js)   | index.js    | ✅       |
+| `TZ`           | Timezone                           | UTC         | ❌       |
 
 ## 📝 Example Usage
 
 - Import `egg-node-js.json` in your Pterodactyl panel.
-- Set `STARTUP` to your entry file (e.g. `index.js` or `main.ts`).
+- Set `STARTUP_FILE` to your entry file (e.g. `index.js` or `main.ts`).
 - Start your server!
 
 ## 🛠️ Installation Script

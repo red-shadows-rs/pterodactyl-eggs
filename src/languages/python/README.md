@@ -25,7 +25,7 @@
 ```bash
 pip install --upgrade pip
 if [ -f /home/container/requirements.txt ]; then pip install -r /home/container/requirements.txt; fi
-python3 /home/container/{{STARTUP}}
+python3 /home/container/{{STARTUP_FILE}}
 ```
 
 - Automatically installs requirements from `requirements.txt` if found.
@@ -40,15 +40,15 @@ python3 /home/container/{{STARTUP}}
 
 ## ⚙️ Environment Variables
 
-| Variable   | Description                        | Default     | Required |
-|------------|------------------------------------|-------------|----------|
-| `STARTUP`  | Main Python file to run (e.g. main.py) | main.py    | ✅       |
-| `TZ`       | Timezone                           | UTC         | ❌       |
+| Variable      | Description                             | Default     | Required |
+|---------------|-----------------------------------------|-------------|----------|
+| `STARTUP_FILE`| Main Python file to run (e.g. main.py)  | main.py     | ✅       |
+| `TZ`          | Timezone                                | UTC         | ❌       |
 
 ## 📝 Example Usage
 
 - Import `egg-python.json` in your Pterodactyl panel.
-- Set `STARTUP` to your entry file (e.g. `main.py`).
+- Set `STARTUP_FILE` to your entry file (e.g. `main.py`).
 - Add a `requirements.txt` if your app needs dependencies.
 - Start your server!
 

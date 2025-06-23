@@ -22,10 +22,10 @@
     "Python 3.9": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.9"
   },
   "file_denylist": [],
-  "startup": "if [ ! -f /home/container/{{STARTUP}} ]; then echo 'Error: {{STARTUP}} not found!'; exit 1; fi; pip install --upgrade pip; if [ -f /home/container/requirements.txt ]; then pip install -r /home/container/requirements.txt; fi; python3 /home/container/{{STARTUP}}",
+  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; pip install --upgrade pip; if [ -f /home/container/requirements.txt ]; then pip install -r /home/container/requirements.txt; fi; python3 /home/container/{{STARTUP_FILE}}",
   "config": {
     "files": "{}",
-    "startup": "{\n    \"done\": \"Change this\"\n}",
+    "startup": "{\n    \"done\": \"/home/container/{{STARTUP_FILE}}\"\n}",
     "logs": "{}",
     "stop": "^^C"
   },
