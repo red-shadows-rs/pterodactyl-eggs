@@ -1,0 +1,58 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2024-11-29T15:20:00+00:00",
+  "name": "Java",
+  "author": "shadow.xox78@gmail.com",
+  "description": "Java Egg",
+  "features": null,
+  "docker_images": {
+    "Java 22": "shadowx7/java_v22",
+    "Java 20": "shadowx7/java_v20",
+    "Java 18": "shadowx7/java_v18",
+    "Java 17": "shadowx7/java_v17",
+    "Java 11": "shadowx7/java_v11",
+    "Java 8": "shadowx7/java_v8"
+  },
+  "file_denylist": [],
+  "startup": "if [[ ! -z {{STARTUP_SCRIPT}} ]]; then mvn clean install; fi; if [[ -f /home/container/{{STARTUP_SCRIPT}} && ({{STARTUP_SCRIPT}} == *.jar) ]]; then java -jar /home/container/{{STARTUP_SCRIPT}}; else echo 'Invalid file type or file not found'; fi;",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"change this part\"\r\n}",
+    "logs": "{}",
+    "stop": "^^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\r\n# Java App Installation Script\r\n#\r\n# Server Files: /mnt/server\r\napt update\r\napt install -y curl jq file unzip maven openjdk-11-jdk\r\n\r\necho -e \"updating maven. please wait...\"\r\nmvn clean install\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing java dependencies\"\r\nif [[ ! -z ${JAVA_DEPENDENCIES} ]]; then\r\n    mvn install ${JAVA_DEPENDENCIES}\r\nfi\r\n\r\nif [ -f /mnt/server/pom.xml ]; then\r\n    mvn install --production\r\nfi\r\n\r\necho -e \"install complete\"\r\nexit 0",
+      "container": "openjdk:17-jdk",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Startup Script",
+      "description": "The path to the startup script (.jar file)",
+      "env_variable": "STARTUP_SCRIPT",
+      "default_value": "main.jar",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string",
+      "field_type": "text"
+    },
+    {
+      "name": "Additional Java dependencies",
+      "description": "Install additional Java dependencies.\r\n\r\nUse spaces to separate.",
+      "env_variable": "JAVA_DEPENDENCIES",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string",
+      "field_type": "text"
+    }
+  ]
+}
+

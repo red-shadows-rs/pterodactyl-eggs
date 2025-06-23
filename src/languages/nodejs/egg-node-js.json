@@ -1,0 +1,67 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v2",
+    "update_url": null
+  },
+  "exported_at": "2024-11-29T15:20:00+00:00",
+  "name": "Node.js",
+  "author": "shadow.xox78@gmail.com",
+  "description": "Nodejs Egg",
+  "features": null,
+  "docker_images": {
+    "Nodejs 22": "shadowx7/nodejs_v22",
+    "Nodejs 20": "shadowx7/nodejs_v20",
+    "Nodejs 18": "shadowx7/nodejs_v18",
+    "Nodejs 16": "shadowx7/nodejs_v16",
+    "Nodejs 14": "shadowx7/nodejs_v14",
+    "Nodejs 12": "shadowx7/nodejs_v12"
+  },
+  "file_denylist": [],
+  "startup": "if [[ ! -z {{STARTUP_SCRIPT}} ]]; then /usr/local/bin/npm install; fi; if [[ -f /home/container/{{STARTUP_SCRIPT}} && ({{STARTUP_SCRIPT}} == *.js || {{STARTUP_SCRIPT}} == *.ts) ]]; then node /home/container/{{STARTUP_SCRIPT}}; else echo 'Invalid file type or file not found'; fi;",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"change this part\"\r\n}",
+    "logs": "{}",
+    "stop": "^^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!/bin/bash\r\n# NodeJS App Installation Script\r\n#\r\n# Server Files: /mnt/server\r\napt update\r\napt install -y curl jq file unzip make gcc g++ python python-dev libtool\r\n\r\necho -e \"updating npm. please wait...\"\r\nnpm install npm@latest -g\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing nodejs packages\"\r\nif [[ ! -z ${NODE_PACKAGES} ]]; then\r\n    /usr/local/bin/npm install ${NODE_PACKAGES}\r\nfi\r\n\r\nif [ -f /mnt/server/package.json ]; then\r\n    /usr/local/bin/npm install --production\r\nfi\r\n\r\necho -e \"install complete\"\r\nexit 0",
+      "container": "node:18-buster-slim",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Startup Script",
+      "description": "The path to the startup script (.js or .ts file)",
+      "env_variable": "STARTUP_SCRIPT",
+      "default_value": "index.js",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string",
+      "field_type": "text"
+    },
+    {
+      "name": "Additional Node packages",
+      "description": "Install additional node packages.\r\n\r\nUse spaces to separate.",
+      "env_variable": "NODE_PACKAGES",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string",
+      "field_type": "text"
+    },
+    {
+      "name": "Uninstall Node packages",
+      "description": "Uninstall node packages.\r\n\r\nUse spaces to separate.",
+      "env_variable": "UNNODE_PACKAGES",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string",
+      "field_type": "text"
+    }
+  ]
+}
