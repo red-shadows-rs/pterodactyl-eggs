@@ -1,8 +1,7 @@
-<!-- © Copyright RED SHADOWS | RS - Shadow-x78 -->
-
 # Pterodactyl Eggs 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
+[![Changelog](https://img.shields.io/badge/Changelog-v9.0-blue?style=for-the-badge)](CHANGELOG.md)
 ![JSON](https://img.shields.io/badge/JSON-eggs-blue?style=for-the-badge&logo=json&logoColor=white)
 
 ## ✨ Features
@@ -18,20 +17,42 @@
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" width="20" height="20"/> Java
 
 - **Egg:** [`egg-java.json`](src/languages/java/egg-java.json)
-- **Versions:** 8, 11, 17, 21
+- **Versions:** 8, 11, 17, 21, 25
 - **Startup:** `java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}`
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="20" height="20"/> Node.js
 
 - **Egg:** [`egg-node-js.json`](src/languages/nodejs/egg-node-js.json)
-- **Versions:** 18, 20, 22
+- **Versions:** 18, 20, 22, 24
 - **Startup:** `node /home/container/{{STARTUP_FILE}}` (or auto-compiles and runs `.ts`)
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="20" height="20"/> Python
 
 - **Egg:** [`egg-python.json`](src/languages/python/egg-python.json)
-- **Versions:** 3.9, 3.10, 3.11, 3.12
+- **Versions:** 3.8, 3.9, 3.10, 3.11, 3.12, 3.13, 3.14
 - **Startup:** `python3 /home/container/{{STARTUP_FILE}}`
+
+## 🌐 Web Frameworks
+
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="20" height="20"/> React
+- **Egg:** [`egg-react.json`](src/frameworks/react/egg-react.json)
+- **Features:** CRA, Vite, Custom Builds
+- **Startup:** `npm start` (or custom)
+
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="Next.js" width="20" height="20"/> Next.js
+- **Egg:** [`egg-nextjs.json`](src/frameworks/nextjs/egg-nextjs.json)
+- **Features:** SSR, ISR, Static Export
+- **Startup:** `npm run start` (or `npm run dev`)
+
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="20" height="20"/> Vue.js
+- **Egg:** [`egg-vue.json`](src/frameworks/vue/egg-vue.json)
+- **Features:** Vue CLI, Vite
+- **Startup:** `npm run serve` (or custom)
+
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" alt="Angular" width="20" height="20"/> Angular
+- **Egg:** [`egg-angular.json`](src/frameworks/angular/egg-angular.json)
+- **Features:** Angular CLI
+- **Startup:** `npm start` (ensure host is 0.0.0.0)
 
 ## 📥 Importing Eggs
 
@@ -49,7 +70,7 @@
 |---------------|------------------------------------|--------------|----------|
 | `STARTUP_FILE`| Main file to run (jar/js/py)       | Varies       | ✅       |
 | `SERVER_MEMORY`| Max RAM for Java (e.g. 2048M)     | 2048M        | ✅ (Java) |
-| `TZ`          | Timezone                           | UTC          | ❌       |
+
 
 ## 📝 Example Usage
 
@@ -75,4 +96,4 @@ MIT — see [LICENSE](LICENSE)
 ---
 
 <span style="font-weight:bold;vertical-align:middle;">&#169; 2025 Copyright</span>
-<img src="https://img.shields.io/badge/RED%20SHADOWS%20%7C%20RS-DC143C?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="RED SHADOWS | RS" style="vertical-align:middle;"/> &#124; <img src="https://img.shields.io/badge/Shadow--x78-000000?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="Shadow-x78" style="vertical-align:middle;"/> - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>
+**RED SHADOWS | RS** - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>

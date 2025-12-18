@@ -7,15 +7,10 @@
   "exported_at": "2025-06-23T15:00:00+00:00",
   "name": "Java",
   "author": "RED SHADOWS | RS",
-  "description": "Java Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Java applications. Compatible with multiple Java versions.\n\nTeam: RED SHADOWS | RS\nAuthor: Shadow-x78\nEmail: support@red-shadows-rs.com",
-  "features": [
-    "Ready-to-use",
-    "Easy import",
-    "Secure startup",
-    "Customizable",
-    "Well-documented"
-  ],
+  "description": "Java Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Java applications. Compatible with multiple Java versions.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+  "features": null,
   "docker_images": {
+    "Java 25": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v25",
     "Java 21": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v21",
     "Java 17": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v17",
     "Java 11": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v11",
@@ -25,13 +20,13 @@
   "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; if [ -f /home/container/pom.xml ]; then mvn clean install; fi; java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}",
   "config": {
     "files": "{}",
-    "startup": "{\n    \"done\": \"/home/container/{{STARTUP_FILE}}\"\n}",
+    "startup": "{\n    \"done\": \"\"\n}",
     "logs": "{}",
     "stop": "^^C"
   },
   "scripts": {
     "installation": {
-      "script": "#!/bin/bash\n# Java App Installation Script\n#\n# Server Files: /mnt/server\napt update\napt install -y curl jq file unzip git maven openjdk-8-jdk openjdk-11-jdk openjdk-17-jdk openjdk-21-jdk\nmkdir -p /mnt/server\ncd /mnt/server\necho -e 'Install complete'\nexit 0",
+      "script": "#!/bin/bash\n# Java App Installation Script\n#\n# Server Files: /mnt/server\napt update\napt install -y curl jq file unzip git maven openjdk-8-jdk openjdk-11-jdk openjdk-17-jdk openjdk-21-jdk openjdk-25-jdk\nmkdir -p /mnt/server\ncd /mnt/server\necho -e 'Install complete'\nexit 0",
       "container": "openjdk:17-jdk",
       "entrypoint": "bash"
     }
@@ -45,16 +40,6 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string",
-      "field_type": "text"
-    },
-    {
-      "name": "Timezone",
-      "description": "Set the timezone for the container.",
-      "env_variable": "TZ",
-      "default_value": "UTC",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "nullable|string",
       "field_type": "text"
     },
     {

@@ -7,7 +7,7 @@
   "exported_at": "2025-06-23T15:00:00+00:00",
   "name": "Python",
   "author": "RED SHADOWS | RS",
-  "description": "Python Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Python applications.\n\nTeam: RED SHADOWS | RS\nAuthor: Shadow-x78\nEmail: support@red-shadows-rs.com",
+  "description": "Python Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Python applications.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
   "features": [
     "Ready-to-use",
     "Easy import",
@@ -16,10 +16,13 @@
     "Well-documented"
   ],
   "docker_images": {
+    "Python 3.14": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.14",
+    "Python 3.13": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.13",
     "Python 3.12": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.12",
     "Python 3.11": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.11",
     "Python 3.10": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.10",
-    "Python 3.9": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.9"
+    "Python 3.9": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.9",
+    "Python 3.8": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.8"
   },
   "file_denylist": [],
   "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; pip install --upgrade pip; if [ -f /home/container/requirements.txt ]; then pip install -r /home/container/requirements.txt; fi; python3 /home/container/{{STARTUP_FILE}}",
@@ -45,16 +48,6 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string",
-      "field_type": "text"
-    },
-    {
-      "name": "Timezone",
-      "description": "Set the timezone for the container.",
-      "env_variable": "TZ",
-      "default_value": "UTC",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "nullable|string",
       "field_type": "text"
     }
   ]

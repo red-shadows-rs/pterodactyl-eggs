@@ -1,5 +1,3 @@
-<!-- © Copyright RED SHADOWS | RS - Shadow-x78 -->
-
 # Python Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
@@ -15,10 +13,13 @@
 
 ## 🐣 Supported Versions
 
-- **Python 3.9**
-- **Python 3.10**
-- **Python 3.11**
+- **Python 3.14**
+- **Python 3.13**
 - **Python 3.12**
+- **Python 3.11**
+- **Python 3.10**
+- **Python 3.9**
+- **Python 3.8**
 
 ## 🚀 Startup Command
 
@@ -33,17 +34,21 @@ python3 /home/container/{{STARTUP_FILE}}
 
 ## 🐳 Docker Images
 
+- `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.14`
+- `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.13`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.12`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.11`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.10`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.9`
+- `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.8`
+
 
 ## ⚙️ Environment Variables
 
 | Variable      | Description                             | Default     | Required |
 |---------------|-----------------------------------------|-------------|----------|
 | `STARTUP_FILE`| Main Python file to run (e.g. main.py)  | main.py     | ✅       |
-| `TZ`          | Timezone                                | UTC         | ❌       |
+
 
 ## 📝 Example Usage
 
@@ -74,4 +79,4 @@ MIT — see [LICENSE](../../../LICENSE)
 
 ---
 
-**© 2025 RED SHADOWS | RS — Shadow-x78. All rights reserved.**
+<span style="font-weight:bold;vertical-align:middle;">**© 2025 RED SHADOWS | RS. All rights reserved.**</span>

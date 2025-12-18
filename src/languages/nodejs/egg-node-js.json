@@ -5,26 +5,27 @@
     "update_url": null
   },
   "exported_at": "2025-06-23T19:26:16+02:00",
-  "name": "Node.js",
-  "author": "shadow.xox78@gmail.com",
-  "description": "Node.js Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Node.js applications.\r\n\r\nTeam: RED SHADOWS | RS\r\nAuthor: Shadow-x78\r\nEmail: support@red-shadows-rs.com",
+  "name": "Node.js (Javascript/Typescript)",
+  "author": "RED SHADOWS | RS",
+  "description": "Node.js Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Node.js applications.\r\n\r\nTeam: RED SHADOWS | RS\r\nEmail: support@red-shadows-rs.com",
   "features": null,
   "docker_images": {
+    "Node.js 24": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v24",
     "Node.js 22": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v22",
     "Node.js 20": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v20",
     "Node.js 18": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v18"
   },
   "file_denylist": [],
-  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; npm install; node /home/container/{{STARTUP_FILE}};",
+  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; npm install; if [[ \"{{STARTUP_FILE}}\" == *.ts ]]; then ts-node /home/container/{{STARTUP_FILE}}; else node /home/container/{{STARTUP_FILE}}; fi",
   "config": {
     "files": "{}",
-    "startup": "{\n    \"done\": \"/home/container/{{STARTUP_FILE}}\"\n}",
+    "startup": "{\n    \"done\": \"\"\n}",
     "logs": "{}",
     "stop": "^^C"
   },
   "scripts": {
     "installation": {
-      "script": "#!/bin/bash\r\n# NodeJS App Installation Script\r\n#\r\n# Server Files: /mnt/server\r\nexport DEBIAN_FRONTEND=noninteractive\r\napt update\r\napt install -y curl unzip\r\n\r\necho -e \"Updating NPM. Please Wait...\"\r\nnpm install npm@latest -g\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing Nodejs Packages\"\r\nif [[ -z ${NODE_PACKAGES} ]]; then\r\n    npm install\r\nelse\r\n    npm install ${NODE_PACKAGES}\r\nfi\r\n\r\nif [ -f /mnt/server/package.json ]; then\r\n    npm install --omit=dev\r\nfi\r\n\r\necho -e \"Install Complete\"\r\nexit 0",
+      "script": "#!/bin/bash\r\n# NodeJS App Installation Script\r\n#\r\n# Server Files: /mnt/server\r\nexport DEBIAN_FRONTEND=noninteractive\r\napt update\r\napt install -y curl unzip\r\n\r\necho -e \"Updating NPM...\"\r\nnpm install npm@latest -g\r\n\r\necho -e \"Installing TypeScript & ts-node...\"\r\nnpm install -g typescript ts-node @types/node\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing Nodejs Packages\"\r\nif [[ -z ${NODE_PACKAGES} ]]; then\r\n    npm install\r\nelse\r\n    npm install ${NODE_PACKAGES}\r\nfi\r\n\r\necho -e \"Install Complete\"\r\nexit 0",
       "container": "node:22-bullseye-slim",
       "entrypoint": "bash"
     }
@@ -38,16 +39,6 @@
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string",
-      "field_type": "text"
-    },
-    {
-      "name": "Timezone",
-      "description": "Set the timezone for the container.",
-      "env_variable": "TZ",
-      "default_value": "UTC",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "nullable|string",
       "field_type": "text"
     },
     {

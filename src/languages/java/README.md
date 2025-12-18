@@ -1,5 +1,3 @@
-<!-- © Copyright RED SHADOWS | RS - Shadow-x78 -->
-
 # Java Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
@@ -15,10 +13,11 @@
 
 ## 🐣 Supported Versions
 
-- **Java 8**
-- **Java 11**
-- **Java 17**
+- **Java 25**
 - **Java 21**
+- **Java 17**
+- **Java 11**
+- **Java 8**
 
 ## 🚀 Startup Command
 
@@ -31,6 +30,7 @@ java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}
 
 ## 🐳 Docker Images
 
+- `ghcr.io/red-shadows-rs/pterodactyl-containers/java:v25`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/java:v21`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/java:v17`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/java:v11`
@@ -42,7 +42,7 @@ java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}
 |------------------|------------------------------------|--------------|----------|
 | `STARTUP_FILE`   | Main JAR file name (e.g. server.jar)| server.jar   | ✅       |
 | `SERVER_MEMORY`  | Maximum RAM for Java (e.g. 2048M)   | 2048M        | ✅       |
-| `TZ`             | Timezone                            | UTC          | ❌       |
+
 
 ## 📝 Example Usage
 
@@ -57,7 +57,7 @@ Installs all required Java versions and build tools:
 
 ```bash
 apt update
-apt install -y curl jq file unzip git maven openjdk-8-jdk openjdk-11-jdk openjdk-17-jdk openjdk-21-jdk
+apt install -y curl jq file unzip git maven openjdk-8-jdk openjdk-11-jdk openjdk-17-jdk openjdk-21-jdk openjdk-25-jdk
 ```
 
 ## 🤝 Contributing
@@ -74,4 +74,4 @@ MIT — see [LICENSE](../../../LICENSE)
 ---
 
 <span style="font-weight:bold;vertical-align:middle;">&#169; 2025 Copyright</span>
-<img src="https://img.shields.io/badge/RED%20SHADOWS%20%7C%20RS-DC143C?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="RED SHADOWS | RS" style="vertical-align:middle;"/> &#124; <img src="https://img.shields.io/badge/Shadow--x78-000000?style=flat&logo=github&logoColor=white&labelColor=2F2F2F" alt="Shadow-x78" style="vertical-align:middle;"/> - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>
+**RED SHADOWS | RS** - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>
