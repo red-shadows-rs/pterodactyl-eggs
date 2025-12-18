@@ -69,6 +69,7 @@
 | Variable      | Description                        | Default      | Required |
 |---------------|------------------------------------|--------------|----------|
 | `STARTUP_FILE`| Main file to run (jar/js/py)       | Varies       | ✅       |
+
 - **Java:**
   - Import `egg-java.json` and set `STARTUP_FILE` to your jar file name (e.g. `server.jar`).
 - **Node.js:**
