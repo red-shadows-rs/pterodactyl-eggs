@@ -6,8 +6,8 @@
   },
   "exported_at": "2025-06-23T15:00:00+00:00",
   "name": "Java",
-  "author": "RED SHADOWS | RS",
-  "description": "Java Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Java applications. Compatible with multiple Java versions.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+  "author": "support@red-shadows-rs.com",
+  "description": "Java Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Java applications.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
   "features": null,
   "docker_images": {
     "Java 25": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v25",
@@ -17,7 +17,7 @@
     "Java 8": "ghcr.io/red-shadows-rs/pterodactyl-containers/java:v8"
   },
   "file_denylist": [],
-  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; if [ -f /home/container/pom.xml ]; then mvn clean install; fi; java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}",
+  "startup": "if [ ! -f /home/container/{{STARTUP_FILE}} ]; then echo 'Error: {{STARTUP_FILE}} not found!'; exit 1; fi; if [ -f /home/container/pom.xml ]; then mvn clean install; fi; java -Xms128M -jar /home/container/{{STARTUP_FILE}}",
   "config": {
     "files": "{}",
     "startup": "{\n    \"done\": \"\"\n}",
@@ -33,23 +33,13 @@
   },
   "variables": [
     {
-      "name": "Startup Command",
-      "description": "The name of the main JAR file to run (e.g. server.jar)",
-      "env_variable": "STARTUP",
+      "name": "Startup File",
+      "description": "The main file to start the server (e.g. server.jar).",
+      "env_variable": "STARTUP_FILE",
       "default_value": "server.jar",
       "user_viewable": true,
       "user_editable": true,
       "rules": "required|string",
-      "field_type": "text"
-    },
-    {
-      "name": "Maximum Memory",
-      "description": "Maximum RAM for the Java process (e.g. 2048M)",
-      "env_variable": "SERVER_MEMORY",
-      "default_value": "2048M",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|integer|min:512|max:65536",
       "field_type": "text"
     }
   ]

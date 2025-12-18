@@ -6,8 +6,8 @@
     },
     "exported_at": "2025-12-18T13:50:00+00:00",
     "name": "Next.js",
-    "author": "RED SHADOWS | RS",
-    "description": "Next.js Egg for Pterodactyl. Supports SSR, ISR, and static exports.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+    "author": "support@red-shadows-rs.com",
+    "description": "Next.js Egg for Pterodactyl. Optimized for Next.js applications.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
     "features": null,
     "docker_images": {
         "Node.js 24": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v24",
@@ -33,7 +33,7 @@
     "variables": [
         {
             "name": "Startup Command",
-            "description": "Command to start (e.g 'npm run start' for prod, 'npm run dev' for dev)",
+            "description": "The command to start the application (e.g. npm run start).",
             "env_variable": "STARTUP_CMD",
             "default_value": "npm run start",
             "user_viewable": true,
@@ -43,7 +43,7 @@
         },
         {
             "name": "Node Packages",
-            "description": "Space-separated npm packages to install (e.g. express dotenv). Leave empty if not needed.",
+            "description": "Additional Node.js packages to install (space-separated).",
             "env_variable": "NODE_PACKAGES",
             "default_value": "",
             "user_viewable": true,

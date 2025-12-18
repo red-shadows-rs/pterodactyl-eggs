@@ -1,7 +1,7 @@
 # Pterodactyl Eggs 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
-[![Changelog](https://img.shields.io/badge/Changelog-v9.0-blue?style=for-the-badge)](CHANGELOG.md)
+[![Changelog](https://img.shields.io/badge/Changelog-v9.2-blue?style=for-the-badge)](CHANGELOG.md)
 ![JSON](https://img.shields.io/badge/JSON-eggs-blue?style=for-the-badge&logo=json&logoColor=white)
 
 ## ✨ Features
@@ -18,7 +18,7 @@
 
 - **Egg:** [`egg-java.json`](src/languages/java/egg-java.json)
 - **Versions:** 8, 11, 17, 21, 25
-- **Startup:** `java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}`
+- **Startup:** `java -Xms128M -jar /home/container/{{STARTUP_FILE}}`
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="20" height="20"/> Node.js
 
@@ -69,14 +69,8 @@
 | Variable      | Description                        | Default      | Required |
 |---------------|------------------------------------|--------------|----------|
 | `STARTUP_FILE`| Main file to run (jar/js/py)       | Varies       | ✅       |
-| `SERVER_MEMORY`| Max RAM for Java (e.g. 2048M)     | 2048M        | ✅ (Java) |
-
-
-## 📝 Example Usage
-
 - **Java:**
   - Import `egg-java.json` and set `STARTUP_FILE` to your jar file name (e.g. `server.jar`).
-  - Set `SERVER_MEMORY` as needed (e.g. `2048M`).
 - **Node.js:**
   - Import `egg-node-js.json` and set `STARTUP_FILE` to your entry file (e.g. `index.js` or `main.ts`).
 - **Python:**

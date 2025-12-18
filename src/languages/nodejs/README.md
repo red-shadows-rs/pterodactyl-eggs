@@ -1,8 +1,8 @@
-# Node.js (JS/TS) Pterodactyl Egg 🥚
+# Node.js Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+
 
 ## ✨ Features
 
@@ -38,14 +38,29 @@ if [[ "{{STARTUP_FILE}}" == *.ts ]]; then ts-node /home/container/{{STARTUP_FILE
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v20`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v18`
 
-
 ## ⚙️ Environment Variables
 
-| Variable       | Description                                 | Default     | Required |
-|----------------|---------------------------------------------|-------------|----------|
-| `STARTUP_FILE` | Main file to run (e.g. index.js or main.ts) | index.js    | ✅       |
-| `NODE_PACKAGES`| Space-separated npm packages to install      | (empty)     | ❌       |
+| Variable        | Description                                      | Default     | Required |
+|-----------------|--------------------------------------------------|-------------|----------|
+| `STARTUP_FILE`  | The main file to start the server (e.g. index.js). | index.js    | ✅       |
+| `NODE_PACKAGES` | Additional Node.js packages to install (space-separated). | (empty)     | ❌       |
 
+## 📝 Example Usage
+
+- Import `egg-node-js.json` in your Pterodactyl panel.
+- Set `STARTUP_FILE` to your entry file (e.g. `index.js` or `app.ts`).
+- Set `NODE_PACKAGES` if you need extra global packages.
+- Start your server!
+
+## 🛠️ Installation Script
+
+Installs Node.js, npm, typescript, and ts-node:
+
+```bash
+apt update
+apt install -y curl unzip
+npm install -g typescript ts-node
+```
 
 ## 🤝 Contributing
 

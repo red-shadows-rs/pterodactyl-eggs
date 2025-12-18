@@ -6,8 +6,8 @@
     },
     "exported_at": "2025-12-18T13:52:00+00:00",
     "name": "Vue.js",
-    "author": "RED SHADOWS | RS",
-    "description": "Vue.js Egg for Pterodactyl. Optimized for Vue CLI and Vite.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+    "author": "support@red-shadows-rs.com",
+    "description": "Vue.js Egg for Pterodactyl. Optimized for Vue.js applications.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
     "features": null,
     "docker_images": {
         "Node.js 24": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v24",
@@ -33,7 +33,7 @@
     "variables": [
         {
             "name": "Startup Command",
-            "description": "Command to start the app (e.g. npm run serve, npm run dev)",
+            "description": "The command to start the application (e.g. npm run serve).",
             "env_variable": "STARTUP_CMD",
             "default_value": "npm run serve",
             "user_viewable": true,
@@ -43,7 +43,7 @@
         },
         {
             "name": "Node Packages",
-            "description": "Space-separated npm packages to install (e.g. express dotenv). Leave empty if not needed.",
+            "description": "Additional Node.js packages to install (space-separated).",
             "env_variable": "NODE_PACKAGES",
             "default_value": "",
             "user_viewable": true,

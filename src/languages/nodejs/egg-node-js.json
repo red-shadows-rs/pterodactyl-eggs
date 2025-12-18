@@ -5,9 +5,9 @@
     "update_url": null
   },
   "exported_at": "2025-06-23T19:26:16+02:00",
-  "name": "Node.js (Javascript/Typescript)",
-  "author": "RED SHADOWS | RS",
-  "description": "Node.js Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Node.js applications.\r\n\r\nTeam: RED SHADOWS | RS\r\nEmail: support@red-shadows-rs.com",
+  "name": "Node.js",
+  "author": "support@red-shadows-rs.com",
+  "description": "Node.js Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Node.js applications.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
   "features": null,
   "docker_images": {
     "Node.js 24": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v24",
@@ -33,7 +33,7 @@
   "variables": [
     {
       "name": "Startup File",
-      "description": "The main file to run (e.g. index.js)",
+      "description": "The main file to start the server (e.g. index.js).",
       "env_variable": "STARTUP_FILE",
       "default_value": "index.js",
       "user_viewable": true,
@@ -43,7 +43,7 @@
     },
     {
       "name": "Node Packages",
-      "description": "Space-separated npm packages to install (e.g. express dotenv). Leave empty if not needed.",
+      "description": "Additional Node.js packages to install (space-separated).",
       "env_variable": "NODE_PACKAGES",
       "default_value": "",
       "user_viewable": true,

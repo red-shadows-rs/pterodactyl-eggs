@@ -1,7 +1,22 @@
-
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+## [v9.2] - 2025-12-18
+
+### 🚀 Added
+- **Eggs:** Added Pterodactyl eggs for **Node.js**, **Python**, **Java**, **Vue**, **Angular**, **Next.js**, and **React**.
+
+### 🔄 Updated
+- **Documentation:** Complete standardization of all README files.
+  - Added specific language/framework badges (Java, Python).
+  - Cleaned up Node.js badges (Removed TypeScript badge).
+  - Standardized all variable descriptions and startup commands.
+- **Node.js:** Renamed egg to "**Node.js**".
+- **Java:** Removed explicit memory limits (`-Xmx`) to allow container management.
+
+### 🗑️ Removed
+- **Variables:** Removed `SERVER_MEMORY` from Java documentation and configuration.
 
 ## [v9.0] - 2025-12-18
 

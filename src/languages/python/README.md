@@ -1,7 +1,7 @@
 # Python Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
-![JSON](https://img.shields.io/badge/JSON-egg-blue?style=for-the-badge&logo=json&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 ## ✨ Features
 
@@ -42,13 +42,11 @@ python3 /home/container/{{STARTUP_FILE}}
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.9`
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.8`
 
-
 ## ⚙️ Environment Variables
 
-| Variable      | Description                             | Default     | Required |
-|---------------|-----------------------------------------|-------------|----------|
-| `STARTUP_FILE`| Main Python file to run (e.g. main.py)  | main.py     | ✅       |
-
+| Variable       | Description                                      | Default     | Required |
+|----------------|--------------------------------------------------|-------------|----------|
+| `STARTUP_FILE` | The main file to start the server (e.g. main.py). | main.py     | ✅       |
 
 ## 📝 Example Usage
 
@@ -79,4 +77,5 @@ MIT — see [LICENSE](../../../LICENSE)
 
 ---
 
-<span style="font-weight:bold;vertical-align:middle;">**© 2025 RED SHADOWS | RS. All rights reserved.**</span>
+<span style="font-weight:bold;vertical-align:middle;">&#169; 2025 Copyright</span>
+**RED SHADOWS | RS** - <span style="font-weight:bold;vertical-align:middle;">All rights reserved</span>

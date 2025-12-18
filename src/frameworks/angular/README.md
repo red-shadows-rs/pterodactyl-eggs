@@ -1,5 +1,4 @@
-
-# Angular Pterodactyl Egg 🅰️
+# Angular Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
@@ -23,7 +22,9 @@
 npm install; {{STARTUP_CMD}}
 ```
 
-**Note:** For Angular default dev server to be accessible, you often need to bind to `0.0.0.0`. Ensure your `npm start` script does this (e.g., `ng serve --host 0.0.0.0`) or modify the startup command variable.
+- Automatically installs dependencies.
+- Runs the specified `STARTUP_CMD`.
+- **Note:** For Angular default dev server to be accessible, you often need to bind to `0.0.0.0`. Ensure your `npm start` script does this (e.g., `ng serve --host 0.0.0.0`) or modify the startup command variable.
 
 ## 🐳 Docker Images
 
@@ -34,11 +35,17 @@ npm install; {{STARTUP_CMD}}
 
 ## ⚙️ Environment Variables
 
-| Variable       | Description                                      | Default     | Required |
-|----------------|--------------------------------------------------|-------------|----------|
-| `STARTUP_CMD`  | Command to run (e.g. `npm start`)                | npm start   | ✅       |
-| `NODE_PACKAGES`| Space-separated npm packages to install             | (empty)     | ❌       |
+| Variable        | Description                                      | Default     | Required |
+|-----------------|--------------------------------------------------|-------------|----------|
+| `STARTUP_CMD`   | The command to start the application (e.g. npm start). | npm start   | ✅       |
+| `NODE_PACKAGES` | Additional Node.js packages to install (space-separated). | (empty)     | ❌       |
 
+## 📝 Example Usage
+
+- Import `egg-angular.json` in your Pterodactyl panel.
+- Set `STARTUP_CMD` to your start script (e.g. `npm start`).
+- Add packages to `NODE_PACKAGES` if needed.
+- Start your server!
 
 ## 🤝 Contributing
 

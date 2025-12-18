@@ -1,5 +1,4 @@
-
-# React Pterodactyl Egg ⚛️
+# React Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61dafb)
@@ -23,6 +22,9 @@
 npm install; {{STARTUP_CMD}}
 ```
 
+- Automatically installs dependencies.
+- Runs the specified `STARTUP_CMD`.
+
 ## 🐳 Docker Images
 
 - `ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v24`
@@ -32,12 +34,17 @@ npm install; {{STARTUP_CMD}}
 
 ## ⚙️ Environment Variables
 
-| Variable       | Description                                      | Default     | Required |
-|----------------|--------------------------------------------------|-------------|----------|
-| `STARTUP_CMD`  | Command to run (e.g. `npm start`)                | npm start   | ✅       |
-| `NODE_PACKAGES`| Space-separated npm packages to install             | (empty)     | ❌       |
+| Variable        | Description                                      | Default     | Required |
+|-----------------|--------------------------------------------------|-------------|----------|
+| `STARTUP_CMD`   | The command to start the application (e.g. npm start). | npm start   | ✅       |
+| `NODE_PACKAGES` | Additional Node.js packages to install (space-separated). | (empty)     | ❌       |
 
+## 📝 Example Usage
 
+- Import `egg-react.json` in your Pterodactyl panel.
+- Set `STARTUP_CMD` to your start script (e.g. `npm start`).
+- Add packages to `NODE_PACKAGES` if needed.
+- Start your server!
 
 ## 🤝 Contributing
 

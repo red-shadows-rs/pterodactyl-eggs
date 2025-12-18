@@ -1,7 +1,7 @@
 # Java Pterodactyl Egg 🥚
 
 ![Pterodactyl](https://img.shields.io/badge/Pterodactyl-0e4688?style=for-the-badge&logo=pterodactyl&logoColor=white)
-![JSON](https://img.shields.io/badge/JSON-egg-blue?style=for-the-badge&logo=json&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 ## ✨ Features
 
@@ -22,7 +22,7 @@
 ## 🚀 Startup Command
 
 ```bash
-java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}
+java -Xms128M -jar /home/container/{{STARTUP_FILE}}
 ```
 
 - Automatically runs `mvn clean install` if a `pom.xml` is found before starting the JAR.
@@ -40,15 +40,12 @@ java -Xms128M -Xmx{{SERVER_MEMORY}} -jar /home/container/{{STARTUP_FILE}}
 
 | Variable         | Description                        | Default      | Required |
 |------------------|------------------------------------|--------------|----------|
-| `STARTUP_FILE`   | Main JAR file name (e.g. server.jar)| server.jar   | ✅       |
-| `SERVER_MEMORY`  | Maximum RAM for Java (e.g. 2048M)   | 2048M        | ✅       |
-
+| `STARTUP_FILE`   | The main file to start the server (e.g. server.jar). | server.jar   | ✅       |
 
 ## 📝 Example Usage
 
 - Import `egg-java.json` in your Pterodactyl panel.
 - Set `STARTUP_FILE` to your JAR file name (e.g. `server.jar`).
-- Set `SERVER_MEMORY` as needed (e.g. `2048M`).
 - Start your server!
 
 ## 🛠️ Installation Script

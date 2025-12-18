@@ -6,7 +6,7 @@
   },
   "exported_at": "2025-06-23T15:00:00+00:00",
   "name": "Python",
-  "author": "RED SHADOWS | RS",
+  "author": "support@red-shadows-rs.com",
   "description": "Python Egg for Pterodactyl. Pre-configured, secure, and ready-to-use for Python applications.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
   "features": [
     "Ready-to-use",
@@ -42,8 +42,8 @@
   "variables": [
     {
       "name": "Startup File",
-      "description": "The main Python file to run (e.g. main.py)",
-      "env_variable": "STARTUP",
+      "description": "The main file to start the server (e.g. main.py).",
+      "env_variable": "STARTUP_FILE",
       "default_value": "main.py",
       "user_viewable": true,
       "user_editable": true,
