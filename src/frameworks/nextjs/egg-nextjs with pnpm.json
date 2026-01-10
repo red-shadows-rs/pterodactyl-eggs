@@ -1,0 +1,55 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY Jexactyl PANEL - jexactyl.com",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-01-10T15:32:20+05:30",
+    "name": "Next.js (pnpm)",
+    "author": "me@kankangain.com",
+    "description": "Next.js Egg for Pterodactyl using a standalone pnpm binary.\n\n This Egg is designed to run Next.js applications using pnpm as the package manager. It includes a startup script that checks for the presence of a package.json file, installs pnpm if it's not already present, and then installs the necessary dependencies before starting the application.\n\nTo use this Egg, simply upload your Next.js application files to the server, ensuring that your package.json file is included. You can customize the startup command using the provided environment variable.\n\nMake sure to set the appropriate Node.js version in the Docker image selection based on your application's requirements.\n\nEnjoy building and deploying your Next.js applications with ease! \n\nNote: This Egg assumes that you have a basic understanding of how to use Pterodactyl and manage Node.js applications. \n\nIf you encounter any issues or have questions, feel free to reach out for support.\nMade with ❤️ by Kankan.",
+    "features": null,
+    "docker_images": {
+        "Nodejs 24": "ghcr.io\/parkervcp\/yolks:nodejs_24",
+        "Nodejs 22": "ghcr.io\/parkervcp\/yolks:nodejs_22",
+        "Nodejs 20": "ghcr.io\/parkervcp\/yolks:nodejs_20",
+        "Nodejs 18": "ghcr.io\/parkervcp\/yolks:nodejs_18"
+    },
+    "file_denylist": [],
+    "startup": "if [ ! -f \/home\/container\/package.json ]; then echo 'Error: package.json not found!'; exit 1; fi; if [ ! -f \/home\/container\/pnpm ]; then echo 'Downloading pnpm...'; curl -L https:\/\/github.com\/pnpm\/pnpm\/releases\/latest\/download\/pnpm-linux-x64 -o \/home\/container\/pnpm; chmod +x \/home\/container\/pnpm; fi; .\/pnpm install; .\/{{STARTUP_CMD}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Ready on\"\r\n}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# Next.js App Installation Script\r\nexport DEBIAN_FRONTEND=noninteractive\r\napt update\r\napt install -y curl unzip git wget\r\n\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\necho \"Downloading pnpm binary...\"\r\nwget -qO- https:\/\/get.pnpm.io\/install.sh | ENV=\"$HOME\/.bashrc\" SHELL=\"$(which bash)\" bash -\r\nsource \/root\/.bashrc\r\n\r\necho \"Install Complete\"\r\nexit 0",
+            "container": "node:22-bullseye-slim",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Startup Command",
+            "description": "The command to start the application. Use .\/pnpm instead of pnpm.",
+            "env_variable": "STARTUP_CMD",
+            "default_value": ".\/pnpm start",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Node Packages",
+            "description": "Additional Node.js packages to install (space-separated).",
+            "env_variable": "NODE_PACKAGES",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        }
+    ]
+}
