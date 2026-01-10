@@ -35,21 +35,31 @@
 ## 🌐 Web Frameworks
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="20" height="20"/> React
+
 - **Egg:** [`egg-react.json`](src/frameworks/react/egg-react.json)
 - **Features:** CRA, Vite, Custom Builds
 - **Startup:** `npm start` (or custom)
 
-### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="Next.js" width="20" height="20"/> Next.js
-- **Egg:** [`egg-nextjs.json`](src/frameworks/nextjs/egg-nextjs.json)
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="Next.js" width="20" height="20"/> Next.js (with npm)
+
+- **Egg:** [`egg-nextjs with npm.json`](src/frameworks/nextjs/egg-nextjs.json)
 - **Features:** SSR, ISR, Static Export
 - **Startup:** `npm run start` (or `npm run dev`)
 
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="Next.js" width="20" height="20"/> Next.js (with pnpm)
+
+- **Egg:** [`egg-nextjs with pnpm.json`](src/frameworks/nextjs/egg-nextjs.json)
+- **Features:** SSR, ISR, Static Export
+- **Startup:** `pnpm run start` (or `pnpm run dev`)
+
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" alt="Vue.js" width="20" height="20"/> Vue.js
+
 - **Egg:** [`egg-vue.json`](src/frameworks/vue/egg-vue.json)
 - **Features:** Vue CLI, Vite
 - **Startup:** `npm run serve` (or custom)
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" alt="Angular" width="20" height="20"/> Angular
+
 - **Egg:** [`egg-angular.json`](src/frameworks/angular/egg-angular.json)
 - **Features:** Angular CLI
 - **Startup:** `npm start` (ensure host is 0.0.0.0)
@@ -66,9 +76,9 @@
 
 ## ⚙️ Environment Variables
 
-| Variable      | Description                        | Default      | Required |
-|---------------|------------------------------------|--------------|----------|
-| `STARTUP_FILE`| Main file to run (jar/js/py)       | Varies       | ✅       |
+| Variable       | Description                  | Default | Required |
+| -------------- | ---------------------------- | ------- | -------- |
+| `STARTUP_FILE` | Main file to run (jar/js/py) | Varies  | ✅       |
 
 - **Java:**
   - Import `egg-java.json` and set `STARTUP_FILE` to your jar file name (e.g. `server.jar`).
