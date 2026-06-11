@@ -13,7 +13,7 @@
         "code-server": "ghcr.io/red-shadows-rs/pterodactyl-containers/code-server:latest"
     },
     "file_denylist": [],
-    "startup": "mkdir -p {{WORK_DIR}}; export PASSWORD=\"{{CODE_PASSWORD}}\"; code-server --bind-addr 0.0.0.0:{{SERVER_PORT}} --auth password {{CODE_SERVER_ARGS}} {{WORK_DIR}}",
+    "startup": "mkdir -p {{WORK_DIR}}; export PASSWORD=\"{{CODE_PASSWORD}}\"; code-server --bind-addr 0.0.0.0:{{CODE_SERVER_PORT}} --auth password {{CODE_SERVER_ARGS}} {{WORK_DIR}}",
     "config": {
         "files": "{}",
         "startup": "{\n    \"done\": \"HTTP server listening on\"\n}",
@@ -41,7 +41,7 @@
         {
             "name": "Server Port",
             "description": "Port used by Code-Server. Default is 8080 and can be changed to any available allocation port.",
-            "env_variable": "SERVER_PORT",
+            "env_variable": "CODE_SERVER_PORT",
             "default_value": "8080",
             "user_viewable": true,
             "user_editable": true,
