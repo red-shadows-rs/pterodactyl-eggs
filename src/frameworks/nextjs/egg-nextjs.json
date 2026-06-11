@@ -1,0 +1,72 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-06-11T00:08:38+03:00",
+    "name": "Next.js",
+    "author": "support@red-shadows-rs.com",
+    "description": "Next.js Egg for Pterodactyl with npm and pnpm support. Optimized for Next.js applications using RED SHADOWS containers.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+    "features": null,
+    "docker_images": {
+        "Next.js": "ghcr.io/red-shadows-rs/pterodactyl-containers/nextjs:latest"
+    },
+    "file_denylist": [],
+    "startup": "if [ ! -f /home/container/package.json ]; then echo 'Error: package.json not found!'; exit 1; fi; if [ \"{{PACKAGE_MANAGER}}\" = \"pnpm\" ]; then corepack enable; corepack prepare pnpm@{{PNPM_VERSION}} --activate; pnpm install; pnpm run {{STARTUP_SCRIPT}}; else npm install; npm run {{STARTUP_SCRIPT}}; fi",
+    "config": {
+        "files": "{}",
+        "startup": "{\n    \"done\": \"Ready on\"\n}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\n# Next.js App Installation Script\nexport DEBIAN_FRONTEND=noninteractive\napt update\napt install -y curl unzip git\n\nmkdir -p /mnt/server\ncd /mnt/server\n\nif [ \"${PACKAGE_MANAGER}\" = \"pnpm\" ]; then\n    echo \"Enabling Corepack and pnpm...\"\n    corepack enable\n    corepack prepare pnpm@${PNPM_VERSION:-10.12.1} --activate\n\n    echo \"Installing Nodejs Packages\"\n    if [[ ! -z ${NODE_PACKAGES} ]]; then\n        pnpm add ${NODE_PACKAGES}\n    fi\n\n    echo \"Installing dependencies...\"\n    pnpm install\nelse\n    echo \"Updating NPM...\"\n    npm install npm@latest -g\n\n    echo \"Installing Nodejs Packages\"\n    if [[ ! -z ${NODE_PACKAGES} ]]; then\n        npm install ${NODE_PACKAGES}\n    fi\n\n    echo \"Installing dependencies...\"\n    npm install\nfi\n\necho \"Install Complete\"\nexit 0",
+            "container": "ghcr.io/red-shadows-rs/pterodactyl-containers/nextjs:latest",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Package Manager",
+            "description": "Package manager to use for installing dependencies and running the startup script. Supported values: npm, pnpm.",
+            "env_variable": "PACKAGE_MANAGER",
+            "default_value": "npm",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|in:npm,pnpm",
+            "field_type": "text"
+        },
+        {
+            "name": "Startup Script",
+            "description": "The package.json script name to run, for example start or dev.",
+            "env_variable": "STARTUP_SCRIPT",
+            "default_value": "start",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "pnpm Version",
+            "description": "Pinned pnpm version used when PACKAGE_MANAGER is pnpm.",
+            "env_variable": "PNPM_VERSION",
+            "default_value": "10.12.1",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Node Packages",
+            "description": "Additional Node.js packages to install (space-separated).",
+            "env_variable": "NODE_PACKAGES",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        }
+    ]
+}

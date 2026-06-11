@@ -1,8 +1,8 @@
-<div align="center">
+<div align="center" dir="rtl">
 
 # Vue.js Egg
 
-Serve Vue.js projects that use Vue CLI, Vite, or custom npm scripts.
+تشغيل مشاريع Vue.js المبنية بـ Vue CLI أو Vite أو npm scripts مخصصة.
 
 [![Vue.js](https://img.shields.io/badge/Vue.js-latest-35495E?style=flat-square&logo=vuedotjs&logoColor=4FC08D)](egg-vue.json)
 [![npm](https://img.shields.io/badge/npm-serve-CB3837?style=flat-square&logo=npm&logoColor=white)](egg-vue.json)
@@ -11,7 +11,7 @@ Serve Vue.js projects that use Vue CLI, Vite, or custom npm scripts.
 
 ---
 
-## 🌐 Language
+## 🌐 اللغة
 
 <a href="README.md">🇬🇧 English</a> · <a href="README_AR.md">🇸🇦 العربية</a>
 
@@ -19,32 +19,32 @@ Serve Vue.js projects that use Vue CLI, Vite, or custom npm scripts.
 
 ## <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" width="16" height="16"> Vue.js
 
-| Egg | Image | Default Command |
-|-----|-------|-----------------|
+| ملف egg | الصورة | أمر التشغيل الافتراضي |
+|---------|--------|------------------------|
 | [`egg-vue.json`](egg-vue.json) | `vue:latest` | `npm run serve` |
 
-## 🐳 Image
+## 🐳 الصورة
 
 ```text
 ghcr.io/red-shadows-rs/pterodactyl-containers/vue:latest
 ```
 
-## 🚀 Startup
+## 🚀 التشغيل
 
 ```bash
 npm install
 {{STARTUP_CMD}}
 ```
 
-**Features:** Vue CLI · Vite · custom npm scripts
+**المزايا:** Vue CLI · Vite · npm scripts مخصصة
 
-## ⚙️ Variables
+## ⚙️ المتغيرات
 
-| Variable | Default | Required |
-|----------|---------|----------|
-| `STARTUP_CMD` | `npm run serve` | Yes |
-| `NODE_PACKAGES` | Empty | No |
+| المتغير | الافتراضي | مطلوب |
+|---------|-----------|-------|
+| `STARTUP_CMD` | `npm run serve` | نعم |
+| `NODE_PACKAGES` | فارغ | لا |
 
 ---
 
-[Back to root README](../../../README.md)
+[العودة إلى README الرئيسي](../../../README_AR.md)

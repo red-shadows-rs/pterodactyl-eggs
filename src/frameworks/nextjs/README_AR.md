@@ -1,8 +1,8 @@
-<div align="center">
+<div align="center" dir="rtl">
 
 # Next.js Egg
 
-Run Next.js projects with npm or pnpm from one configurable egg.
+تشغيل مشاريع Next.js عبر npm أو pnpm من egg واحد قابل للتعديل.
 
 [![Next.js](https://img.shields.io/badge/Next.js-latest-000000?style=flat-square&logo=next.js&logoColor=white)](egg-nextjs.json)
 [![pnpm](https://img.shields.io/badge/pnpm-10.12.1-F69220?style=flat-square&logo=pnpm&logoColor=white)](egg-nextjs.json)
@@ -11,7 +11,7 @@ Run Next.js projects with npm or pnpm from one configurable egg.
 
 ---
 
-## 🌐 Language
+## 🌐 اللغة
 
 <a href="README.md">🇬🇧 English</a> · <a href="README_AR.md">🇸🇦 العربية</a>
 
@@ -19,35 +19,35 @@ Run Next.js projects with npm or pnpm from one configurable egg.
 
 ## <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" width="16" height="16"> Next.js
 
-| Egg | Image | Managers |
-|-----|-------|----------|
+| ملف egg | الصورة | مدير الحزم |
+|---------|--------|------------|
 | [`egg-nextjs.json`](egg-nextjs.json) | `nextjs:latest` | npm, pnpm |
 
-## 🐳 Image
+## 🐳 الصورة
 
 ```text
 ghcr.io/red-shadows-rs/pterodactyl-containers/nextjs:latest
 ```
 
-## 🚀 Startup
+## 🚀 التشغيل
 
 ```bash
 npm run {{STARTUP_SCRIPT}}
-# or
+# أو
 pnpm run {{STARTUP_SCRIPT}}
 ```
 
-**Features:** SSR · SSG · npm · pnpm via Corepack
+**المزايا:** SSR · SSG · npm · pnpm عبر Corepack
 
-## ⚙️ Variables
+## ⚙️ المتغيرات
 
-| Variable | Default | Required |
-|----------|---------|----------|
-| `PACKAGE_MANAGER` | `npm` | Yes |
-| `STARTUP_SCRIPT` | `start` | Yes |
-| `PNPM_VERSION` | `10.12.1` | Yes |
-| `NODE_PACKAGES` | Empty | No |
+| المتغير | الافتراضي | مطلوب |
+|---------|-----------|-------|
+| `PACKAGE_MANAGER` | `npm` | نعم |
+| `STARTUP_SCRIPT` | `start` | نعم |
+| `PNPM_VERSION` | `10.12.1` | نعم |
+| `NODE_PACKAGES` | فارغ | لا |
 
 ---
 
-[Back to root README](../../../README.md)
+[العودة إلى README الرئيسي](../../../README_AR.md)

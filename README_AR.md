@@ -1,8 +1,8 @@
-<div align="center">
+<div align="center" dir="rtl">
 
 # Pterodactyl Eggs
 
-Panel-ready JSON eggs for apps running on RED SHADOWS GHCR images.
+ملفات JSON جاهزة للاستيراد داخل Pterodactyl لتشغيل التطبيقات على صور RED SHADOWS من GHCR.
 
 [![Version](https://img.shields.io/badge/version-v10-2563eb?style=flat-square&logo=semver)](CHANGELOG.md)
 [![Eggs](https://img.shields.io/badge/eggs-8-16a34a?style=flat-square&logo=json&logoColor=white)](src/)
@@ -13,107 +13,107 @@ Panel-ready JSON eggs for apps running on RED SHADOWS GHCR images.
 
 ---
 
-## 🌐 Language
+## 🌐 اللغة
 
 <a href="README.md">🇬🇧 English</a> · <a href="README_AR.md">🇸🇦 العربية</a>
 
 ---
 
-## 📋 Table of Contents
+## 📋 جدول المحتويات
 
-- [Supported Eggs](#supported-eggs)
-- [Image Map](#image-map)
-- [Quick Import](#quick-import)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [البيض المدعوم](#supported-eggs)
+- [خريطة الصور](#image-map)
+- [الاستيراد السريع](#quick-import)
+- [هيكل المشروع](#project-structure)
+- [المساهمة](#contributing)
+- [الرخصة](#license)
 
 ---
 
 <a id="supported-eggs"></a>
-## 🥚 Supported Eggs
+## 🥚 البيض المدعوم
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" width="16" height="16"> Java
 
-| Egg | Versions | Image |
-|-----|----------|-------|
+| ملف egg | الإصدارات | الصور |
+|---------|-----------|-------|
 | [`egg-java.json`](src/languages/java/egg-java.json) | 8, 11, 17, 21, 25 | `java:v8` · `java:v11` · `java:v17` · `java:v21` · `java:v25` |
 
-**Features:** Maven auto-build · configurable JAR startup
+**المزايا:** بناء Maven تلقائي · ملف JAR قابل للتعديل
 
 - - -
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" width="16" height="16"> Node.js
 
-| Egg | Versions | Image |
-|-----|----------|-------|
+| ملف egg | الإصدارات | الصور |
+|---------|-----------|-------|
 | [`egg-node-js.json`](src/languages/nodejs/egg-node-js.json) | 18 EOL, 20, 22, 24 | `nodejs:v18` · `nodejs:v20` · `nodejs:v22` · `nodejs:v24` |
 
-**Features:** npm install · JavaScript startup · TypeScript via `ts-node`
+**المزايا:** تثبيت npm · تشغيل JavaScript · دعم TypeScript عبر `ts-node`
 
 - - -
 
 ### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="16" height="16"> Python
 
-| Egg | Versions | Image |
-|-----|----------|-------|
+| ملف egg | الإصدارات | الصور |
+|---------|-----------|-------|
 | [`egg-python.json`](src/languages/python/egg-python.json) | 3.8 EOL, 3.9 EOL, 3.10, 3.11, 3.12, 3.13, 3.14 | `python:v3.8` · `python:v3.9` · `python:v3.10` · `python:v3.11` · `python:v3.12` · `python:v3.13` · `python:v3.14` |
 
-**Features:** pip upgrade · `requirements.txt` install · configurable Python file
+**المزايا:** تحديث pip · تثبيت `requirements.txt` · ملف Python قابل للتعديل
 
 ---
 
-## 🌐 Web Frameworks
+## 🌐 أطر الويب
 
-| Framework | Egg | Image | Features |
-|-----------|-----|-------|----------|
-| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="14" height="14"> React | [`egg-react.json`](src/frameworks/react/egg-react.json) | `react:latest` | Vite, CRA, custom scripts |
+| الإطار | ملف egg | الصورة | المزايا |
+|--------|---------|--------|---------|
+| <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="14" height="14"> React | [`egg-react.json`](src/frameworks/react/egg-react.json) | `react:latest` | Vite, CRA, scripts مخصصة |
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" width="14" height="14"> Next.js | [`egg-nextjs.json`](src/frameworks/nextjs/egg-nextjs.json) | `nextjs:latest` | npm, pnpm, SSR, SSG |
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original.svg" width="14" height="14"> Vue.js | [`egg-vue.json`](src/frameworks/vue/egg-vue.json) | `vue:latest` | Vue CLI, Vite |
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" width="14" height="14"> Angular | [`egg-angular.json`](src/frameworks/angular/egg-angular.json) | `angular:latest` | Angular CLI |
 
 ---
 
-## 💻 Softwares
+## 💻 البرامج
 
-| Software | Egg | Image | Default Port |
-|----------|-----|-------|--------------|
+| البرنامج | ملف egg | الصورة | المنفذ الافتراضي |
+|----------|---------|--------|------------------|
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" width="14" height="14"> Code-Server | [`egg-code-server.json`](src/softwares/code-server/egg-code-server.json) | `code-server:latest` | `8080` |
 
 ---
 
 <a id="image-map"></a>
-## 🐳 Image Map
+## 🐳 خريطة الصور
 
-All eggs point to:
+كل eggs تستخدم:
 
 ```text
 ghcr.io/red-shadows-rs/pterodactyl-containers
 ```
 
-| Category | Images |
-|----------|--------|
+| التصنيف | الصور |
+|---------|-------|
 | Java | `java:v8` · `java:v11` · `java:v17` · `java:v21` · `java:v25` |
 | Node.js | `nodejs:v18` EOL · `nodejs:v20` · `nodejs:v22` · `nodejs:v24` |
 | Python | `python:v3.8` EOL · `python:v3.9` EOL · `python:v3.10` · `python:v3.11` · `python:v3.12` · `python:v3.13` · `python:v3.14` |
-| Frameworks | `react:latest` · `nextjs:latest` · `vue:latest` · `angular:latest` |
-| Softwares | `code-server:latest` |
+| الأطر | `react:latest` · `nextjs:latest` · `vue:latest` · `angular:latest` |
+| البرامج | `code-server:latest` |
 
 ---
 
 <a id="quick-import"></a>
-## 🚀 Quick Import
+## 🚀 الاستيراد السريع
 
-1. Open the Pterodactyl admin panel.
-2. Go to **Nests > Import Egg**.
-3. Upload the required `egg-*.json` file.
-4. Select the image included in the egg.
-5. Configure variables and start the server.
+1. افتح لوحة إدارة Pterodactyl.
+2. انتقل إلى **Nests > Import Egg**.
+3. ارفع ملف `egg-*.json` المطلوب.
+4. اختر الصورة الموجودة داخل egg.
+5. اضبط المتغيرات وشغل السيرفر.
 
 ---
 
 <a id="project-structure"></a>
-## 🏗️ Project Structure
+## 🏗️ هيكل المشروع
 
 ```text
 .
@@ -130,28 +130,28 @@ ghcr.io/red-shadows-rs/pterodactyl-containers
 ---
 
 <a id="contributing"></a>
-## 🤝 Contributing
+## 🤝 المساهمة
 
-1. Fork the repository
-2. Create a feature branch
-3. Update the egg or README
-4. Validate JSON
-5. Submit a Pull Request
+1. اعمل fork للمستودع
+2. أنشئ branch جديد
+3. عدل egg أو README
+4. تحقق من JSON
+5. افتح Pull Request
 
 ---
 
 <a id="license"></a>
-## 📜 License
+## 📜 الرخصة
 
-Distributed under the [MIT License (Non-Commercial)](LICENSE).
+يوزع المشروع تحت [MIT License (Non-Commercial)](LICENSE).
 
 ---
 
-<div align="center">
+<div align="center" dir="rtl">
 
-Built by <a href="https://github.com/shadow-x78">SHADOW_x78</a> -
+بني بواسطة <a href="https://github.com/shadow-x78">SHADOW_x78</a> -
 <a href="https://github.com/red-shadows-rs">RED SHADOWS | RS</a> ·
-[Changelog](CHANGELOG.md)
+[سجل التغييرات](CHANGELOG.md)
 
 <sub>&copy; 2025 RED SHADOWS | RS</sub>
 

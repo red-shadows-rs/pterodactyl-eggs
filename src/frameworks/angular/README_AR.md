@@ -1,8 +1,8 @@
-<div align="center">
+<div align="center" dir="rtl">
 
 # Angular Egg
 
-Serve Angular CLI projects with a configurable npm startup command.
+تشغيل مشاريع Angular CLI عبر أمر npm قابل للتعديل.
 
 [![Angular](https://img.shields.io/badge/Angular-latest-DD0031?style=flat-square&logo=angular&logoColor=white)](egg-angular.json)
 [![npm](https://img.shields.io/badge/npm-start-CB3837?style=flat-square&logo=npm&logoColor=white)](egg-angular.json)
@@ -11,7 +11,7 @@ Serve Angular CLI projects with a configurable npm startup command.
 
 ---
 
-## 🌐 Language
+## 🌐 اللغة
 
 <a href="README.md">🇬🇧 English</a> · <a href="README_AR.md">🇸🇦 العربية</a>
 
@@ -19,32 +19,32 @@ Serve Angular CLI projects with a configurable npm startup command.
 
 ## <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" width="16" height="16"> Angular
 
-| Egg | Image | Default Command |
-|-----|-------|-----------------|
+| ملف egg | الصورة | أمر التشغيل الافتراضي |
+|---------|--------|------------------------|
 | [`egg-angular.json`](egg-angular.json) | `angular:latest` | `npm start` |
 
-## 🐳 Image
+## 🐳 الصورة
 
 ```text
 ghcr.io/red-shadows-rs/pterodactyl-containers/angular:latest
 ```
 
-## 🚀 Startup
+## 🚀 التشغيل
 
 ```bash
 npm install
 {{STARTUP_CMD}}
 ```
 
-**Features:** Angular CLI · custom npm scripts · `0.0.0.0` host support via project script
+**المزايا:** Angular CLI · npm scripts مخصصة · دعم `0.0.0.0` من script المشروع
 
-## ⚙️ Variables
+## ⚙️ المتغيرات
 
-| Variable | Default | Required |
-|----------|---------|----------|
-| `STARTUP_CMD` | `npm start` | Yes |
-| `NODE_PACKAGES` | Empty | No |
+| المتغير | الافتراضي | مطلوب |
+|---------|-----------|-------|
+| `STARTUP_CMD` | `npm start` | نعم |
+| `NODE_PACKAGES` | فارغ | لا |
 
 ---
 
-[Back to root README](../../../README.md)
+[العودة إلى README الرئيسي](../../../README_AR.md)

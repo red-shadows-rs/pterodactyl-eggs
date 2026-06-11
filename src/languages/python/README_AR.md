@@ -1,8 +1,8 @@
-<div align="center">
+<div align="center" dir="rtl">
 
 # Python Egg
 
-Run Python applications with automatic pip and requirements handling.
+تشغيل تطبيقات Python مع دعم pip وملف requirements.txt تلقائيًا.
 
 [![Python](https://img.shields.io/badge/Python-3.8%20--%203.14-3776AB?style=flat-square&logo=python&logoColor=white)](egg-python.json)
 [![Pip](https://img.shields.io/badge/pip-requirements.txt-3775A9?style=flat-square&logo=pypi&logoColor=white)](egg-python.json)
@@ -11,7 +11,7 @@ Run Python applications with automatic pip and requirements handling.
 
 ---
 
-## 🌐 Language
+## 🌐 اللغة
 
 <a href="README.md">🇬🇧 English</a> · <a href="README_AR.md">🇸🇦 العربية</a>
 
@@ -19,14 +19,14 @@ Run Python applications with automatic pip and requirements handling.
 
 ## <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="16" height="16"> Python
 
-| Egg | Versions | Default File |
-|-----|----------|--------------|
+| ملف egg | الإصدارات | الملف الافتراضي |
+|---------|-----------|-----------------|
 | [`egg-python.json`](egg-python.json) | 3.8 EOL, 3.9 EOL, 3.10, 3.11, 3.12, 3.13, 3.14 | `main.py` |
 
-## 🐳 Images
+## 🐳 الصور
 
-| Version | Image |
-|---------|-------|
+| الإصدار | الصورة |
+|---------|--------|
 | 3.8 | `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.8` EOL |
 | 3.9 | `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.9` EOL |
 | 3.10 | `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.10` |
@@ -35,20 +35,20 @@ Run Python applications with automatic pip and requirements handling.
 | 3.13 | `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.13` |
 | 3.14 | `ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.14` |
 
-## 🚀 Startup
+## 🚀 التشغيل
 
 ```bash
 python3 /home/container/{{STARTUP_FILE}}
 ```
 
-**Features:** pip upgrade · `requirements.txt` install · configurable entry file
+**المزايا:** تحديث pip · تثبيت `requirements.txt` · ملف تشغيل قابل للتعديل
 
-## ⚙️ Variables
+## ⚙️ المتغيرات
 
-| Variable | Default | Required |
-|----------|---------|----------|
-| `STARTUP_FILE` | `main.py` | Yes |
+| المتغير | الافتراضي | مطلوب |
+|---------|-----------|-------|
+| `STARTUP_FILE` | `main.py` | نعم |
 
 ---
 
-[Back to root README](../../../README.md)
+[العودة إلى README الرئيسي](../../../README_AR.md)

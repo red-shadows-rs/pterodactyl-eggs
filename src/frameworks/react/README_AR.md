@@ -1,8 +1,8 @@
-<div align="center">
+<div align="center" dir="rtl">
 
 # React Egg
 
-Serve React projects that use Vite, Create React App, or custom npm scripts.
+تشغيل مشاريع React المبنية بـ Vite أو Create React App أو npm scripts مخصصة.
 
 [![React](https://img.shields.io/badge/React-latest-20232a?style=flat-square&logo=react&logoColor=61dafb)](egg-react.json)
 [![npm](https://img.shields.io/badge/npm-start-CB3837?style=flat-square&logo=npm&logoColor=white)](egg-react.json)
@@ -11,7 +11,7 @@ Serve React projects that use Vite, Create React App, or custom npm scripts.
 
 ---
 
-## 🌐 Language
+## 🌐 اللغة
 
 <a href="README.md">🇬🇧 English</a> · <a href="README_AR.md">🇸🇦 العربية</a>
 
@@ -19,32 +19,32 @@ Serve React projects that use Vite, Create React App, or custom npm scripts.
 
 ## <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="16" height="16"> React
 
-| Egg | Image | Default Command |
-|-----|-------|-----------------|
+| ملف egg | الصورة | أمر التشغيل الافتراضي |
+|---------|--------|------------------------|
 | [`egg-react.json`](egg-react.json) | `react:latest` | `npm start` |
 
-## 🐳 Image
+## 🐳 الصورة
 
 ```text
 ghcr.io/red-shadows-rs/pterodactyl-containers/react:latest
 ```
 
-## 🚀 Startup
+## 🚀 التشغيل
 
 ```bash
 npm install
 {{STARTUP_CMD}}
 ```
 
-**Features:** Vite · Create React App · custom npm scripts
+**المزايا:** Vite · Create React App · npm scripts مخصصة
 
-## ⚙️ Variables
+## ⚙️ المتغيرات
 
-| Variable | Default | Required |
-|----------|---------|----------|
-| `STARTUP_CMD` | `npm start` | Yes |
-| `NODE_PACKAGES` | Empty | No |
+| المتغير | الافتراضي | مطلوب |
+|---------|-----------|-------|
+| `STARTUP_CMD` | `npm start` | نعم |
+| `NODE_PACKAGES` | فارغ | لا |
 
 ---
 
-[Back to root README](../../../README.md)
+[العودة إلى README الرئيسي](../../../README_AR.md)

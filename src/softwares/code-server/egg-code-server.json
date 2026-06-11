@@ -1,0 +1,72 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-06-11T01:35:59+03:00",
+    "name": "Code-Server",
+    "author": "support@red-shadows-rs.com",
+    "description": "Code-Server Egg for Pterodactyl. Runs VS Code in the browser using the RED SHADOWS code-server container.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+    "features": null,
+    "docker_images": {
+        "code-server": "ghcr.io/red-shadows-rs/pterodactyl-containers/code-server:latest"
+    },
+    "file_denylist": [],
+    "startup": "mkdir -p {{WORK_DIR}}; export PASSWORD=\"{{CODE_PASSWORD}}\"; code-server --bind-addr 0.0.0.0:{{SERVER_PORT}} --auth password {{CODE_SERVER_ARGS}} {{WORK_DIR}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\n    \"done\": \"HTTP server listening on\"\n}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\n# code-server Installation Script\nexport DEBIAN_FRONTEND=noninteractive\nmkdir -p /mnt/server\ncd /mnt/server\necho \"Install Complete\"\nexit 0",
+            "container": "ghcr.io/red-shadows-rs/pterodactyl-containers/code-server:latest",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Code Password",
+            "description": "Password used by Code-Server when auth is enabled. Change this before exposing the server.",
+            "env_variable": "CODE_PASSWORD",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:128",
+            "field_type": "text"
+        },
+        {
+            "name": "Server Port",
+            "description": "Port used by Code-Server. Default is 8080 and can be changed to any available allocation port.",
+            "env_variable": "SERVER_PORT",
+            "default_value": "8080",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|min:1|max:65535",
+            "field_type": "text"
+        },
+        {
+            "name": "Work Directory",
+            "description": "Directory opened by Code-Server.",
+            "env_variable": "WORK_DIR",
+            "default_value": "/home/container",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "Code-Server Arguments",
+            "description": "Additional Code-Server arguments, for example --disable-telemetry.",
+            "env_variable": "CODE_SERVER_ARGS",
+            "default_value": "--disable-telemetry",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "nullable|string",
+            "field_type": "text"
+        }
+    ]
+}

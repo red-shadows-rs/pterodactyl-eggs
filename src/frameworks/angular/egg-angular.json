@@ -10,10 +10,7 @@
     "description": "Angular Egg for Pterodactyl. Optimized for Angular applications.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
     "features": null,
     "docker_images": {
-        "Node.js 24": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v24",
-        "Node.js 22": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v22",
-        "Node.js 20": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v20",
-        "Node.js 18": "ghcr.io/red-shadows-rs/pterodactyl-containers/nodejs:v18"
+        "Angular": "ghcr.io/red-shadows-rs/pterodactyl-containers/angular:latest"
     },
     "file_denylist": [],
     "startup": "if [ ! -f /home/container/package.json ]; then echo 'Error: package.json not found!'; exit 1; fi; npm install; {{STARTUP_CMD}}",
@@ -26,7 +23,7 @@
     "scripts": {
         "installation": {
             "script": "#!/bin/bash\n# Angular App Installation Script\nexport DEBIAN_FRONTEND=noninteractive\napt update\napt install -y curl unzip git\n\necho \"Updating NPM...\"\nnpm install npm@latest -g\n\nmkdir -p /mnt/server\ncd /mnt/server\n\necho \"Installing Nodejs Packages\"\nif [[ ! -z ${NODE_PACKAGES} ]]; then\n    npm install ${NODE_PACKAGES}\nfi\n\necho \"Installing dependencies...\"\nnpm install\n\necho \"Install Complete\"\nexit 0",
-            "container": "node:22-bullseye-slim",
+            "container": "ghcr.io/red-shadows-rs/pterodactyl-containers/angular:latest",
             "entrypoint": "bash"
         }
     },

@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v10.0] - 2026-06-11
+
+### 🚀 Added
+- **Arabic README:** Added `README_AR.md` at the root and for every egg section.
+- **Language Toggle:** Added English/Arabic toggles with 🇬🇧 and 🇸🇦 flags across README files.
+- **Softwares:** Added new `src/softwares/` category.
+- **Code-Server:** Added Code-Server egg with password auth and configurable workspace directory.
+- **Code-Server Port:** Added configurable `SERVER_PORT` with `8080` as the default.
+- **`.gitignore`:** Added project-level ignore rules for local Kilo state, dependencies, caches, environment files, and OS/editor noise.
+
+### 🔄 Updated
+- **Framework Images:** Updated React, Next.js, Vue.js, and Angular eggs to use dedicated RED SHADOWS images.
+- **Next.js:** Merged the previous npm and pnpm eggs into one `egg-nextjs.json`.
+- **Next.js Variables:** Added `PACKAGE_MANAGER`, `STARTUP_SCRIPT`, and pinned `PNPM_VERSION` support.
+- **Install Containers:** Updated egg installation containers to use RED SHADOWS images instead of public base images.
+- **README:** Redesigned root README files with compact tables, flat-square badges, devicons, and language flags.
+- **Section READMEs:** Refreshed every egg README with matching English and Arabic versions.
+- **Code-Server Name:** Standardized display name to **Code-Server** while keeping file names, image names, and commands unchanged.
+
+### 🗑️ Deprecated
+- **Node.js 18:** EOL, kept for compatibility and marked in documentation.
+- **Python 3.8:** EOL, kept for compatibility and marked in documentation.
+- **Python 3.9:** EOL, kept for compatibility and marked in documentation.
+
 ## [v9.2] - 2025-12-18
 
 ### 🚀 Added

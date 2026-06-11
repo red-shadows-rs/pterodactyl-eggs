@@ -35,7 +35,7 @@
   "scripts": {
     "installation": {
       "script": "#!/bin/bash\n# Python App Installation Script\n#\n# Server Files: /mnt/server\napt update\napt install -y curl jq file unzip git python3 python3-pip python3-venv\nmkdir -p /mnt/server\ncd /mnt/server\necho -e 'Install complete'\nexit 0",
-      "container": "python:3.12-slim",
+      "container": "ghcr.io/red-shadows-rs/pterodactyl-containers/python:v3.12",
       "entrypoint": "bash"
     }
   },
