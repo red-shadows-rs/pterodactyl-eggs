@@ -32,7 +32,7 @@ ghcr.io/red-shadows-rs/pterodactyl-containers/code-server:latest
 ## 🚀 التشغيل
 
 ```bash
-code-server --bind-addr 0.0.0.0:{{SERVER_PORT}} --auth password {{WORK_DIR}}
+mkdir -p {{WORK_DIR}}; rm -rf ~/.local/share/code-server/User/workspace.json ~/.local/share/code-server/User/globalStorage 2>/dev/null; cd {{WORK_DIR}}; export PASSWORD="{{CODE_PASSWORD}}"; code-server --bind-addr 0.0.0.0:{{CODE_SERVER_PORT}} --auth password {{CODE_SERVER_ARGS}} .
 ```
 
 **المزايا:** IDE من المتصفح · كلمة مرور · منفذ قابل للتغيير · مجلد عمل قابل للتعديل
@@ -42,7 +42,7 @@ code-server --bind-addr 0.0.0.0:{{SERVER_PORT}} --auth password {{WORK_DIR}}
 | المتغير | الافتراضي | مطلوب |
 |---------|-----------|-------|
 | `CODE_PASSWORD` | فارغ | نعم |
-| `SERVER_PORT` | `8080` | نعم |
+| `CODE_SERVER_PORT` | `8080` | نعم |
 | `WORK_DIR` | `/home/container` | نعم |
 | `CODE_SERVER_ARGS` | `--disable-telemetry` | لا |
 

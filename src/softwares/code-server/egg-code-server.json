@@ -13,7 +13,7 @@
         "code-server": "ghcr.io/red-shadows-rs/pterodactyl-containers/code-server:latest"
     },
     "file_denylist": [],
-    "startup": "mkdir -p {{WORK_DIR}}; export PASSWORD=\"{{CODE_PASSWORD}}\"; code-server --bind-addr 0.0.0.0:{{CODE_SERVER_PORT}} --auth password {{CODE_SERVER_ARGS}} {{WORK_DIR}}",
+    "startup": "mkdir -p {{WORK_DIR}}; rm -rf ~/.local/share/code-server/User/workspace.json ~/.local/share/code-server/User/globalStorage 2>/dev/null; cd {{WORK_DIR}}; export PASSWORD=\"{{CODE_PASSWORD}}\"; code-server --bind-addr 0.0.0.0:{{CODE_SERVER_PORT}} --auth password {{CODE_SERVER_ARGS}} .",
     "config": {
         "files": "{}",
         "startup": "{\n    \"done\": \"HTTP server listening on\"\n}",
