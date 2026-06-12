@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v11.1] - 2026-06-12
+
+### 🔄 Updated
+- **Display Name:** Renamed "n8n" to "N8N" in all user-facing labels (egg name, README titles, descriptions).
+- **Version:** Bumped project version from 11.0 to 11.1.
+
 ## [v11.0] - 2026-06-12
 
 ### 🚀 Added

@@ -1,10 +1,10 @@
 <div align="center">
 
-# n8n Egg
+# N8N Egg
 
-Run n8n workflow automation in the browser.
+Run N8N workflow automation in the browser.
 
-[![n8n](https://img.shields.io/badge/n8n-latest-2563eb?style=flat-square)](egg-n8n.json)
+[![N8N](https://img.shields.io/badge/N8N-latest-2563eb?style=flat-square)](egg-n8n.json)
 [![Port](https://img.shields.io/badge/port-5678-16a34a?style=flat-square)](egg-n8n.json)
 
 </div>
@@ -17,7 +17,7 @@ Run n8n workflow automation in the browser.
 
 ---
 
-## <img src="https://cdn.simpleicons.org/n8n" width="16" height="16"> n8n
+## <img src="https://cdn.simpleicons.org/n8n" width="16" height="16"> N8N
 
 | Egg | Image | Default Port |
 |-----|-------|--------------|

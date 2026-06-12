@@ -4,7 +4,7 @@
 
 Panel-ready JSON eggs for apps running on RED SHADOWS GHCR images.
 
-[![Version](https://img.shields.io/badge/version-v11-2563eb?style=flat-square&logo=semver)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-11.1-2563eb?style=flat-square&logo=semver)](CHANGELOG.md)
 [![Eggs](https://img.shields.io/badge/eggs-9-16a34a?style=flat-square&logo=json&logoColor=white)](src/)
 [![PTDL](https://img.shields.io/badge/PTDL-v2-f59e0b?style=flat-square)](https://pterodactyl.io/)
 [![License](https://img.shields.io/badge/license-MIT--NC-dc2626?style=flat-square)](LICENSE)
@@ -79,7 +79,7 @@ Panel-ready JSON eggs for apps running on RED SHADOWS GHCR images.
 | Software | Egg | Image | Default Port |
 |----------|-----|-------|--------------|
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" width="14" height="14"> Code-Server | [`egg-code-server.json`](src/softwares/code-server/egg-code-server.json) | `code-server:latest` | `8080` |
-| <img src="https://cdn.simpleicons.org/n8n" width="14" height="14"> n8n | [`egg-n8n.json`](src/softwares/n8n/egg-n8n.json) | `n8n:latest` | `5678` |
+| <img src="https://cdn.simpleicons.org/n8n" width="14" height="14"> N8N | [`egg-n8n.json`](src/softwares/n8n/egg-n8n.json) | `n8n:latest` | `5678` |
 
 ---
 

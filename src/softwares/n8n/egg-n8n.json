@@ -5,9 +5,9 @@
         "update_url": null
     },
     "exported_at": "2026-06-12T19:30:00+03:00",
-    "name": "n8n",
+    "name": "N8N",
     "author": "support@red-shadows-rs.com",
-    "description": "n8n Egg for Pterodactyl. Runs n8n workflow automation using the RED SHADOWS n8n container.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+    "description": "N8N Egg for Pterodactyl. Runs N8N workflow automation using the RED SHADOWS N8N container.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
     "features": null,
     "docker_images": {
         "n8n": "ghcr.io/red-shadows-rs/pterodactyl-containers/n8n:latest"
@@ -29,8 +29,8 @@
     },
     "variables": [
         {
-            "name": "n8n Port",
-            "description": "Port used by n8n. Default is 5678.",
+            "name": "N8N Port",
+            "description": "Port used by N8N. Default is 5678.",
             "env_variable": "N8N_PORT",
             "default_value": "5678",
             "user_viewable": true,
@@ -39,8 +39,8 @@
             "field_type": "text"
         },
         {
-            "name": "n8n Protocol",
-            "description": "Protocol used by n8n (http or https).",
+            "name": "N8N Protocol",
+            "description": "Protocol used by N8N (http or https).",
             "env_variable": "N8N_PROTOCOL",
             "default_value": "http",
             "user_viewable": true,
@@ -49,8 +49,8 @@
             "field_type": "text"
         },
         {
-            "name": "n8n Host",
-            "description": "Host address for n8n.",
+            "name": "N8N Host",
+            "description": "Host address for N8N.",
             "env_variable": "N8N_HOST",
             "default_value": "localhost",
             "user_viewable": true,
@@ -59,8 +59,8 @@
             "field_type": "text"
         },
         {
-            "name": "n8n Encryption Key",
-            "description": "Encryption key for n8n credentials. Generate a random 32-character string.",
+            "name": "N8N Encryption Key",
+            "description": "Encryption key for N8N credentials. Generate a random 32-character string.",
             "env_variable": "N8N_ENCRYPTION_KEY",
             "default_value": "",
             "user_viewable": true,

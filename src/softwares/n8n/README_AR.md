@@ -1,10 +1,10 @@
 <div align="center" dir="rtl">
 
-# n8n Egg
+# N8N Egg
 
-تشغيل أتمتة سير العمل n8n من المتصفح.
+تشغيل أتمتة سير العمل N8N من المتصفح.
 
-[![n8n](https://img.shields.io/badge/n8n-latest-2563eb?style=flat-square)](egg-n8n.json)
+[![N8N](https://img.shields.io/badge/N8N-latest-2563eb?style=flat-square)](egg-n8n.json)
 [![Port](https://img.shields.io/badge/port-5678-16a34a?style=flat-square)](egg-n8n.json)
 
 </div>
@@ -17,7 +17,7 @@
 
 ---
 
-## <img src="https://cdn.simpleicons.org/n8n" width="16" height="16"> n8n
+## <img src="https://cdn.simpleicons.org/n8n" width="16" height="16"> N8N
 
 | ملف egg | الصورة | المنفذ الافتراضي |
 |---------|--------|------------------|
