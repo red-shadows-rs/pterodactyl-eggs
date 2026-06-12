@@ -1,0 +1,72 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-06-12T19:30:00+03:00",
+    "name": "n8n",
+    "author": "support@red-shadows-rs.com",
+    "description": "n8n Egg for Pterodactyl. Runs n8n workflow automation using the RED SHADOWS n8n container.\n\nTeam: RED SHADOWS | RS\nEmail: support@red-shadows-rs.com",
+    "features": null,
+    "docker_images": {
+        "n8n": "ghcr.io/red-shadows-rs/pterodactyl-containers/n8n:latest"
+    },
+    "file_denylist": [],
+    "startup": "n8n start",
+    "config": {
+        "files": "{}",
+        "startup": "{\n    \"done\": \"n8n ready\"\n}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\n# n8n Installation Script\nexport DEBIAN_FRONTEND=noninteractive\nmkdir -p /mnt/server\ncd /mnt/server\necho \"Install Complete\"\nexit 0",
+            "container": "ghcr.io/red-shadows-rs/pterodactyl-containers/n8n:latest",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "n8n Port",
+            "description": "Port used by n8n. Default is 5678.",
+            "env_variable": "N8N_PORT",
+            "default_value": "5678",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|integer|min:1|max:65535",
+            "field_type": "text"
+        },
+        {
+            "name": "n8n Protocol",
+            "description": "Protocol used by n8n (http or https).",
+            "env_variable": "N8N_PROTOCOL",
+            "default_value": "http",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:10",
+            "field_type": "text"
+        },
+        {
+            "name": "n8n Host",
+            "description": "Host address for n8n.",
+            "env_variable": "N8N_HOST",
+            "default_value": "localhost",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:255",
+            "field_type": "text"
+        },
+        {
+            "name": "n8n Encryption Key",
+            "description": "Encryption key for n8n credentials. Generate a random 32-character string.",
+            "env_variable": "N8N_ENCRYPTION_KEY",
+            "default_value": "",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:128",
+            "field_type": "text"
+        }
+    ]
+}

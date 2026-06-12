@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v11.0] - 2026-06-12
+
+### 🚀 Added
+- **n8n:** Added n8n workflow automation egg with configurable port, protocol, host, and encryption key.
+- **n8n README:** Added English and Arabic README files for n8n egg section.
+
+### 🔄 Updated
+- **Version:** Bumped project version to v11.
+- **Badges:** Updated version badge to v11 and eggs count to 9 in both README files.
+- **Image Map:** Added `n8n:latest` under Softwares category.
+
 ## [v10.0] - 2026-06-11
 
 ### 🚀 Added

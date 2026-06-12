@@ -4,8 +4,8 @@
 
 Panel-ready JSON eggs for apps running on RED SHADOWS GHCR images.
 
-[![Version](https://img.shields.io/badge/version-v10-2563eb?style=flat-square&logo=semver)](CHANGELOG.md)
-[![Eggs](https://img.shields.io/badge/eggs-8-16a34a?style=flat-square&logo=json&logoColor=white)](src/)
+[![Version](https://img.shields.io/badge/version-v11-2563eb?style=flat-square&logo=semver)](CHANGELOG.md)
+[![Eggs](https://img.shields.io/badge/eggs-9-16a34a?style=flat-square&logo=json&logoColor=white)](src/)
 [![PTDL](https://img.shields.io/badge/PTDL-v2-f59e0b?style=flat-square)](https://pterodactyl.io/)
 [![License](https://img.shields.io/badge/license-MIT--NC-dc2626?style=flat-square)](LICENSE)
 
@@ -79,6 +79,7 @@ Panel-ready JSON eggs for apps running on RED SHADOWS GHCR images.
 | Software | Egg | Image | Default Port |
 |----------|-----|-------|--------------|
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" width="14" height="14"> Code-Server | [`egg-code-server.json`](src/softwares/code-server/egg-code-server.json) | `code-server:latest` | `8080` |
+| <img src="https://cdn.simpleicons.org/n8n" width="14" height="14"> n8n | [`egg-n8n.json`](src/softwares/n8n/egg-n8n.json) | `n8n:latest` | `5678` |
 
 ---
 
@@ -97,7 +98,7 @@ ghcr.io/red-shadows-rs/pterodactyl-containers
 | Node.js | `nodejs:v18` EOL · `nodejs:v20` · `nodejs:v22` · `nodejs:v24` |
 | Python | `python:v3.8` EOL · `python:v3.9` EOL · `python:v3.10` · `python:v3.11` · `python:v3.12` · `python:v3.13` · `python:v3.14` |
 | Frameworks | `react:latest` · `nextjs:latest` · `vue:latest` · `angular:latest` |
-| Softwares | `code-server:latest` |
+| Softwares | `code-server:latest` · `n8n:latest` |
 
 ---
 
@@ -120,7 +121,7 @@ ghcr.io/red-shadows-rs/pterodactyl-containers
 ├── src/
 │   ├── languages/      # Java, Node.js, Python
 │   ├── frameworks/     # React, Next.js, Vue.js, Angular
-│   └── softwares/      # Code-Server
+│   └── softwares/      # Code-Server, n8n
 ├── CHANGELOG.md
 ├── LICENSE
 ├── README.md
@@ -153,6 +154,6 @@ Built by <a href="https://github.com/shadow-x78">SHADOW_x78</a> -
 <a href="https://github.com/red-shadows-rs">RED SHADOWS | RS</a> ·
 [Changelog](CHANGELOG.md)
 
-<sub>&copy; 2025 RED SHADOWS | RS</sub>
+<sub>&copy; 2021 - 2026 RED SHADOWS | RS</sub>
 
 </div>
